@@ -1,8 +1,12 @@
 body {
     background-color: #131313;
 }
+main {
+  max-height: 50%;
+}
 .container {
     max-width: 400px;
+    max-height: 300px;
   }
   h1 {
     font-size: 24px;
