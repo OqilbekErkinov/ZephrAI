@@ -36,10 +36,10 @@ const route = useRoute()
 </template>
 
 <style scoped>
-.fixed-footer {
+/* .fixed-footer {
   position: fixed;
   bottom: 2rem;
   left: 0;
   right: 0;
-}
+} */
 </style>

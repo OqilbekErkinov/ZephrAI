@@ -75,7 +75,7 @@
     outline: none;
     padding-left: 1rem;
     position: fixed;
-    bottom: 4rem;
+    bottom: 3rem;
     left: 0.8rem;
 }
 
@@ -86,7 +86,7 @@
     cursor: pointer;
     padding: 0;
     position: fixed;
-    bottom: 4rem;
+    bottom: 3rem;
     right: 0.8rem;
 }
 

@@ -59,7 +59,10 @@
 </template>
 <style scoped>
 .menu {
-    position: relative;
+    position: fixed;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
