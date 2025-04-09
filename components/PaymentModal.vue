@@ -21,7 +21,7 @@
   const methods = [
     { name: 'Click', icon: '/images/click.png', link: '/premium' },
     { name: 'Payme', icon: '/images/payme.png', link: 'https://payme.uz/pay' },
-    { name: 'Visa', icon: '/images/visa.png', link: 'https://visa.com/pay' },
+    { name: 'Visa', icon: '/images/visa.png', link: '/creator-pro' },
     { name: 'YooKassa', icon: '/images/yookassa.png', link: 'https://yookassa.ru/pay' },
   ]
   

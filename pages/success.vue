@@ -16,7 +16,7 @@ const router = useRouter();
 onMounted(() => {
   setTimeout(() => {
     router.push('/styles-category');
-  }, 10000);
+  }, 6000);
 });
 </script>
 <style scoped>
