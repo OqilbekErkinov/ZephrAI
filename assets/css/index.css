@@ -1,0 +1,160 @@
+body {
+    background-color: #131313;
+}
+.container {
+    max-width: 400px;
+  }
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: left;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #cccccc;
+    text-align: left;
+  }
+  .home-page p {
+    font-size: 14px;
+    color: #aaaaaa;
+    text-align: left;
+  }
+  .image-gallery {
+    position: relative;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  }
+  .image-grid {
+    display: flex;
+    gap: 10px;
+  }
+  .image-card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+  }
+  .image-card.large {
+    flex: 1;
+  }
+  .image-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+  .image-card:hover img {
+    transform: scale(1.05);
+  }
+  .image-grid.small {
+    justify-content: center;
+  }
+  .image-card.small {
+    width: 70px;
+    height: 70px;
+  }
+  .speciall{
+    height: 120px;
+    width: 110px;
+    margin-right: -1.3rem;
+    margin-left: 0.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .speciall img{
+    height: 120px;
+    width: 100px;
+    margin-left: -0.8rem;
+  }
+  .zagruzit {
+    position: absolute;
+    bottom: 0rem;
+    font-size: 10px;
+    color: white;
+    background: #191919;
+    left: 0;
+    right: 0;
+  }
+  .image-galleryyy {
+    position: relative;
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 8px;
+    width: 70%;
+    height: 167px;
+  }
+  .image-galleryyy .image-card{
+    height: 150px;
+    width: 100px
+  }
+  .image-galleryyy .image-card img{
+    height: 150px;
+    width: 100%;
+  }
+  .overlay-text {
+    color: #fff;
+    font-size: 12px;
+    margin-right: -4rem;
+  }
+  .second-gallery {
+    position: relative;
+    padding: 20px;
+  }
+  .background-image {
+    position: relative;
+    background: url('/images/back1.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
+    height: 215px;
+    overflow: hidden;
+  }
+  .background-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+    border-radius: 15px;
+  } 
+  .background-image > * {
+    position: relative;
+    z-index: 1;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .third-gallery {
+    position: relative;
+    padding: 20px;
+    background: #111;
+    border-radius: 15px;
+  }
+  .image-grid.third {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    border-radius: 15px;
+  }
+  .third-gallery.image-card.special {
+    width: 100px;
+    height: 140px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: #111;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+  }
+  .third-gallery .image-grid .image-card img{
+    height: 140px;
+  }
