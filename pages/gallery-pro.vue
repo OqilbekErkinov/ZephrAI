@@ -224,9 +224,9 @@ function shareToSocial(platform) {
 
 <style scoped>
 .container {
-    max-width: 1200px;
+    max-width: 400px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0;
 }
 
 .about-gallery {
@@ -234,7 +234,7 @@ function shareToSocial(platform) {
     grid-template-columns: repeat(3, 1fr);
     gap: 7px;
     justify-content: center;
-    padding: 8px;
+    /* padding: 8px; */
     margin-bottom: 5rem;
 }
 
@@ -276,7 +276,7 @@ function shareToSocial(platform) {
 .fullscreen-viewer .viewer-header {
     display: flex;
     justify-content: space-between;
-    padding: 16px;
+    padding: 16px 10px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -298,7 +298,8 @@ function shareToSocial(platform) {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin: 0 auto;
+    padding: 0;
 }
 
 .viewer-content img {

@@ -153,8 +153,8 @@ const parseMessage = (text) => {
 
 .creator img {
     position: fixed;
-    right: 2.5rem;
-    bottom: 9rem;
+    margin: auto;
+    bottom: 14rem;
     z-index: 0;
 }
 
@@ -190,7 +190,7 @@ const parseMessage = (text) => {
     z-index: 2;
     display: flex;
     flex-direction: column-reverse;
-    max-height: 330px;
+    max-height: 71%;
     width: 92%;
     overflow-y: auto;
     margin-bottom: 5rem;

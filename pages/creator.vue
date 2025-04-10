@@ -16,7 +16,7 @@
                     Оплачивай и начинаем прямо <br> сейчас! <NuxtLink to="/styles" style="color: #F0A8E1">PREMIUM</NuxtLink></p>
             </div>
         </div>
-        <form style="display: flex; justify-content: center; width: 100%;">
+        <form style="display: flex; justify-content: center; width: 100%; position: relative;">
             <input class="creator-input me-2" placeholder="Напиши..." disabled/>
             <button type="submit" class="submit-btn" c>
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

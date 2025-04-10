@@ -11,6 +11,7 @@
             fill="#E90000" />
         </svg>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Низкое качества
         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -18,6 +19,8 @@
             fill="#E90000" />
         </svg>
       </div>
+    </div>
+    <div class="image-galleryy">
       <img src='/images/premium3.png' alt="premium" class="gallery-img">
       <img src='/images/premium4.png' alt="premium" class="gallery-img">
       <div class="premiumtextt">Одиночное
@@ -27,6 +30,7 @@
             fill="#23C72D" />
         </svg>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Высокое качества
         <svg width="11" height="9" viewBox="0 0 11 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -43,12 +47,12 @@
       дать еще более крутой эффект!
     </p>
     <p class="sub-text2">Важно<span class="text-danger">!</span> <br>
-        Используйте разные ракурсы, выражения лиц, освещение и фоны используйте крупный план, лицо должно быть хорошо
-        видно, это придаст нейрофотографиям максимально естественный эффект.
-      </p>
-      <NuxtLink to="/download">
-        <button class="continue-button">Продолжать</button>
-      </NuxtLink>
+      Используйте разные ракурсы, выражения лиц, освещение и фоны используйте крупный план, лицо должно быть хорошо
+      видно, это придаст нейрофотографиям максимально естественный эффект.
+    </p>
+    <NuxtLink to="/selection">
+      <button class="continue-button">Продолжать</button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -64,75 +68,84 @@ const images = [
 <style scoped>
 .premiumtexttt {
   position: absolute;
-  bottom: 8.5rem;
+  bottom: 0rem;
   font-size: 10px;
   color: white;
   background: rgba(25, 25, 25, 0.8);
-  left: 0.95rem;
+  left: 0rem;
   right: 0;
-  padding-left: 2.2rem;
+  padding-left: 3rem;
 }
+
 .premiumtextt {
   position: absolute;
   bottom: 0rem;
   font-size: 10px;
   color: white;
   background: rgba(25, 25, 25, 0.8);
-  left: 0.95rem;
+  left: 0rem;
   right: 0;
-  padding-left: 2.2rem;
+  padding-left: 3.3rem;
 }
+
 .promo-wrapper {
   background: #0F0F0F;
   color: white;
-  padding: 2rem 1rem;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
   font-family: sans-serif;
+  padding: 1rem;
+  padding-bottom: 2rem;
 }
+
 .image-galleryy {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  border-radius: 15px;
   position: relative;
 }
+
 .gallery-img {
-  width: 45%;
+  width: 50%;
   object-fit: cover;
 }
+
 .maintitle {
-    font-size: 40px;
-    font-weight: 550;
-    color: #F0A8E1;
-    text-align: left;
-    margin-top: 1rem;
+  font-size: 40px;
+  font-weight: 550;
+  color: #F0A8E1;
+  text-align: left;
+  margin-top: 1rem;
 }
+
 .sub-title {
-    font-size: 22px;
-    font-weight: 550;
-    color: #fff;
-    text-align: left;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  font-size: 22px;
+  font-weight: 550;
+  color: #fff;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
+
 .sub-text {
-    color: #ccc;
-    font-size: 15px;
-    text-align: left;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: regular;
+  color: #ccc;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: regular;
 }
+
 .sub-text2 {
-    color: #fff;
-    font-size: 15px;
-    text-align: left;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: regular;
+  color: #fff;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: regular;
 }
+
 .continue-button {
   width: 100%;
   background: #F0A8E1;

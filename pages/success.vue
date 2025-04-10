@@ -52,6 +52,6 @@ onMounted(() => {
     width: 50%;
     margin-top: 4rem;
     margin-bottom: 6rem;
-    margin-right: 5.5rem;
+    margin-right: 7.2rem;
 }
 </style>

@@ -30,7 +30,7 @@ const styles = [
 <style scoped>
 .style-wrapper {
     background: #131313;
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
     max-width: 400px;
     margin: 0 auto;
     font-family: sans-serif;
@@ -75,7 +75,7 @@ const styles = [
     padding: 2px 0.2rem;
     position: absolute;
     background: rgba(25, 25, 25, 0.8);
-    width: 43%;
+    width: 44%;
     margin-top: -1.1rem;
     text-align: center;
     border-radius: 0 0 10px 10px;

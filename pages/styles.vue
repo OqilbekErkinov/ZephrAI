@@ -4,24 +4,28 @@
             <img v-for="(img, i) in images" :key="i" :src="img" alt="photo" class="gallery-img" />
         </div>
 
-        <h1 class="main-title">Твои новые фотографии – всего в одном клике!</h1>
+        <h1 class="main-title">Как это работает</h1>
         <p class="subtext">
-            Мы улучшаем фото, добавляем стильные эффекты и помогаем создавать идеальные кадры.
-            Для этого вам нужно приобрести <span class="highlight">PREMIUM</span>.
+            Мы улучшаем фото, добавляем стильные эффекты и помогаем создавать
+            идеальные кадры. Для этого вам нужно приобрести PREMIUM.
+            Оплачивай и начинаем прямо сейчас!
+            Суперскидка только сейчас -50%!
         </p>
-
+        <span style="color: #F0A8E1; margin: 1rem;">199 990 сум</span>вместо <span class="highlight">399 980 сум</span>
         <div class="premium-box">
             <h3>PREMIUM</h3>
             <p>Создавайте уникальные изображения с возможностями:</p>
             <ul>
                 <li><span class="green">✔</span> 70 уникальных нейрофотографий</li>
                 <li><span class="green">✔</span> 100+ готовых стилей на выбор</li>
-                <li><span class="green">✔</span> 1 персональная модель, созданная на &nbsp;&nbsp;&nbsp;&nbsp;основе твоих фото</li>
-                <li><span class="green">✔</span> Режим «Создатель» где ты сможешь &nbsp;&nbsp;&nbsp;&nbsp;воплотить свои самые смелые идеи</li>
+                <li><span class="green">✔</span> 1 персональная модель, созданная на &nbsp;&nbsp;&nbsp;&nbsp;основе
+                    твоих фото</li>
+                <li><span class="green">✔</span> Режим «Создатель» где ты сможешь &nbsp;&nbsp;&nbsp;&nbsp;воплотить свои
+                    самые смелые идеи</li>
             </ul>
-        </div>&nbsp;
-        <button @click="showModal = true" class="premium-button">PREMIUM</button>
+            <button @click="showModal = true" class="premium-button">PREMIUM</button>
         <PaymentModal :visible="showModal" @close="showModal = false" />
+        </div>
     </div>
 </template>
 
@@ -39,9 +43,8 @@ const images = [
 .promo-wrapper {
     background: #0F0F0F;
     color: white;
-    padding: 2rem 1rem;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 450px;
+    /* margin: 0.5rem; */
     font-family: sans-serif;
 }
 
@@ -49,12 +52,13 @@ const images = [
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
 }
 
 .gallery-img {
-    width: 100%;
-    border-radius: 8px;
+    width: 130%;
     object-fit: cover;
+    margin: 0;
 }
 
 .main-title {
@@ -63,6 +67,7 @@ const images = [
     color: #F0A8E1;
     text-align: left;
     margin-top: 1rem;
+    margin: 1rem;
 }
 
 .subtext {
@@ -71,19 +76,21 @@ const images = [
     text-align: left;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    margin: 1rem;
 }
 
 .highlight {
-    font-weight: bold;
     color: #F0A8E1;
+    text-decoration: line-through;
 }
 
 .premium-box {
-    background: #1C1C1C;
-    border-radius: 12px;
-    padding: 0.4rem;
+    background: #222222;
+    border-radius: 15px;
+    padding: 0.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
+    margin: 1rem;
 }
 
 .premium-box h3 {
@@ -119,5 +126,6 @@ const images = [
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    margin: 0.5rem 0;
 }
 </style>

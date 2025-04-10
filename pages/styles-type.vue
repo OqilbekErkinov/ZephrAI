@@ -92,7 +92,7 @@ const types = [
   padding: 2px 0.2rem;
   position: absolute;
   background: rgba(25, 25, 25, 0.8);
-  width: 43%;
+  width: 44%;
   margin-top: -1.1rem;
   text-align: center;
   border-radius: 0 0 10px 10px;

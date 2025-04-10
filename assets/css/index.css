@@ -24,17 +24,14 @@ body {
   }
   .image-gallery {
     position: relative;
-    background: #1e1e1e;
-    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
   }
   .image-grid {
     display: flex;
     gap: 10px;
   }
   .image-card {
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
   }
@@ -52,23 +49,33 @@ body {
   }
   .image-grid.small {
     justify-content: center;
+    background: #222222;
+    padding: 10px;
+    border-radius: 10px;
   }
   .image-card.small {
     width: 70px;
-    height: 70px;
+    height: 74px;
+    border-radius: 10px !important;
+  }
+  .small img {
+    width: 100%;
+    object-fit: contain;
   }
   .speciall{
-    height: 120px;
-    width: 110px;
-    margin-right: -1.3rem;
-    margin-left: 0.5rem;
+    height: 150px;
+    /* width: 90px; */
+    margin: 0;
+    margin: auto;
+    margin-right: -2rem;
+    margin-left: 0.8rem;
     position: relative;
     z-index: 1;
   }
   .speciall img{
-    height: 120px;
-    width: 100px;
-    margin-left: -0.8rem;
+    height: 150px;
+    width: 95px;
+    margin-left: -0.4rem;
   }
   .zagruzit {
     position: absolute;
@@ -82,37 +89,39 @@ body {
   .image-galleryyy {
     position: relative;
     display: flex;
-    background: rgba(0, 0, 0, 0.6);
+    background: #222222;
     padding: 8px;
-    border-radius: 8px;
-    width: 70%;
-    height: 167px;
+    border-radius: 15px;
+    /* width: 70%; */
+    height: 196px;
   }
   .image-galleryyy .image-card{
-    height: 150px;
+    height: 180px;
     width: 100px
   }
   .image-galleryyy .image-card img{
-    height: 150px;
+    height: 180px;
     width: 100%;
   }
   .overlay-text {
     color: #fff;
     font-size: 12px;
-    margin-right: -4rem;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    z-index: 4005 !important;
   }
   .second-gallery {
     position: relative;
-    padding: 20px;
   }
   .background-image {
     position: relative;
     background: url('/images/back1.jpg') no-repeat center;
     background-size: cover;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.5);
-    height: 215px;
+    padding: 20px 0;
+    /* box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.9), inset 0 -10px 20px rgba(0, 0, 0, 0.9); */
+    height: 300px;
     overflow: hidden;
   }
   .background-image::before {
@@ -121,20 +130,42 @@ body {
     inset: 0;
     background: rgba(0, 0, 0, 0.5); 
     z-index: 0;
-    border-radius: 15px;
+    
   } 
   .background-image > * {
     position: relative;
     z-index: 1;
   }
+  .background-image {
+    position: relative;
+    overflow: hidden;
+  }
+  .gradient-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 4000;
+    pointer-events: none;
+  }
+  .gradient-overlay.top {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+  }
+  .gradient-overlay.bottom {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+  }
   .image-container {
     display: flex;
     justify-content: center;
     gap: 10px;
+    padding-top: 2rem;
+    margin-left: -0.8rem;
   }
   .third-gallery {
     position: relative;
-    padding: 20px;
+    /* padding: 20px; */
     background: #111;
     border-radius: 15px;
   }
@@ -159,3 +190,24 @@ body {
   .third-gallery .image-grid .image-card img{
     height: 140px;
   }
+.large-1 {
+  background: #222222;
+  border-radius: 25px;
+  padding: 10px!important;
+  margin-left: -3.5rem;
+  margin-right: 0.5rem;
+  /* width: 200px !important;
+  height: 280px !important; */
+}
+.large-image {
+  border-radius: 21px;
+  margin-top: -0.1rem;
+  /* width: 180px !important;
+  height: 265px !important; */
+}
+.large-image2 {
+  border-radius: 21px;
+  margin-top: 0.5rem;
+  /* width: 180px !important;
+  height: 265px !important; */
+}
