@@ -6,13 +6,13 @@
             </div>
             <div class="modal-body">
                 <a href="https://instagram.com/king_006x" target="_blank" class="modal-item">
-                    <img src="/images/instagram.png" class="icon" />
+                    <img src="/images/icon-instagram.png" class="icon" />
                 </a>
                 <a href="https://t.me/king_006x" target="_blank" class="modal-item">
-                    <img src="/images/telegram.png" class="icon" />
+                    <img src="/images/icon-telegram.png" class="icon" />
                 </a>
                 <a href="https://facebook.com/King_006x" target="_blank" class="modal-item">
-                    <img src="/images/facebook.png" class="icon" />
+                    <img src="/images/icon-facebook.png" class="icon" />
                 </a>
             </div>
 

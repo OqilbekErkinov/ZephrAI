@@ -80,7 +80,7 @@
 
 }
 .menu-back {
-    background: url('/images/MenuShadow.png') no-repeat center; 
+    background: url('/images/menushadow.png') no-repeat center; 
     background-size: cover;
     width: 100%;
     height: 10%;
