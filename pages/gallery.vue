@@ -1,7 +1,7 @@
 <template>
     <div class="container about-page">
       <div class="content-wrapper">
-        <img class="about-image" src="/images/text.png" alt="Textpic">
+        <img class="about-image" src="/images/gallery-back.png" alt="Textpic">
         <NuxtLink to="/gallery-pro">
           <button class="about-button">Создать генерацию</button>
         </NuxtLink>

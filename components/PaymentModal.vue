@@ -19,10 +19,10 @@
   const emit = defineEmits(['close'])
   
   const methods = [
-    { name: 'Click', icon: '/images/click.png', link: '/premium' },
-    { name: 'Payme', icon: '/images/payme.png', link: 'https://payme.uz/pay' },
-    { name: 'Visa', icon: '/images/visa.png', link: '/creator-pro' },
-    { name: 'YooKassa', icon: '/images/yookassa.png', link: 'https://yookassa.ru/pay' },
+    { name: 'Click', icon: '/images/pay-click.png', link: '/premium' },
+    { name: 'Payme', icon: '/images/pay-payme.png', link: 'https://payme.uz/pay' },
+    { name: 'Visa', icon: '/images/pay-visa.png', link: '/creator-pro' },
+    { name: 'YooKassa', icon: '/images/pay-yookassa.png', link: 'https://yookassa.ru/pay' },
   ]
   
   const closeModal = () => {

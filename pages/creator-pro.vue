@@ -5,7 +5,7 @@
             <div class="secondup">99</div>
         </div>
         <div class="creator">
-            <img src="/images/back2.png" alt="">
+            <img src="/images/chat-back.png" alt="">
             <div class="text-fon">
                 <div v-if="messages.length === 0" class="text-bg">
                     <p>

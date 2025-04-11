@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="creator">
-            <img src="/images/back2.png" alt="">
+            <img src="/images/chat-back.png" alt="">
             <div class="text-fon">
                 <div class="text-bg"></div>
                 <p>Режим «Создатель» где ты сможешь воплотить свои самые смелые идеи

@@ -33,8 +33,9 @@ const types = [
   { title: 'Очки будущего', img: '/images/type2.png' },
   { title: 'Футуристическое', img: '/images/type3.png' },
   { title: 'Зимняя роскошь', img: '/images/type4.png' },
-  { title: 'Природа', img: '/images/type5.png' },
-  { title: 'Богатство', img: '/images/type6.png' }
+  { title: 'Желтый луг', img: '/images/type5.png' },
+  { title: 'Бургунди', img: '/images/type6.png' },
+  { title: 'Летнее сияние', img: '/images/type6.png' }
 ]
 </script>
 

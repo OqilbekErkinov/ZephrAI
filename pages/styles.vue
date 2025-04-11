@@ -35,7 +35,7 @@ import { ref } from 'vue'
 
 const showModal = ref(false)
 const images = [
-    '/images/styles1.png'
+    '/images/styles-back.png'
 ]
 </script>
 

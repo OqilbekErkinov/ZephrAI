@@ -123,15 +123,15 @@ import { Carousel, Slide, Navigation } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 
 const aboutGalleryImages = ref([
-    "/images/img9.png",
-    "/images/img13.png",
-    "/images/img7.png",
-    "/images/img8.png",
-    "/images/img5.png",
-    "/images/img10.png",
-    "/images/img11.png",
-    "/images/img12.png",
-    "/images/img2.png"
+    "/images/gallery1.png",
+    "/images/gallery2.png",
+    "/images/gallery3.png",
+    "/images/gallery4.png",
+    "/images/gallery5.png",
+    "/images/gallery6.png",
+    "/images/gallery7.png",
+    "/images/gallery8.png",
+    "/images/gallery9.png"
 ]);
 
 // For fullscreen viewer
@@ -240,7 +240,7 @@ function shareToSocial(platform) {
 
 .image-cardd.specialll {
     width: 120px;
-    height: 140px;
+    height: 160px;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
@@ -249,7 +249,7 @@ function shareToSocial(platform) {
 }
 
 .about-gallery .image-cardd img {
-    height: 140px;
+    height: 160px;
     width: 120px;
     object-fit: cover;
     border-radius: 10px;

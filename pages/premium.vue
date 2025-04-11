@@ -57,12 +57,6 @@
 </template>
 
 <script setup>
-const images = [
-  '/images/premium1.png',
-  '/images/premium2.png',
-  '/images/premium3.png',
-  '/images/premium4.png'
-]
 </script>
 
 <style scoped>
