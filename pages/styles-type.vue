@@ -1,9 +1,9 @@
 <template>
   <div class="type-wrapper">
-    <h2 class="type-heading"><span class="highlight">Выбирайте</span><br>готовый стиль</h2>
+    <h1 class="type-heading"><span class="highlight">Выбирайте</span><br>готовый стиль</h1>
     <div class="type-back">
       <div class="d-flex align-items-center justify-content-between">
-        <h3>{{ route.query.category || 'Категория' }}</h3>
+        <h4>{{ route.query.category || 'Категория' }}</h4>
         <p class="cancel" @click="goBack">✕</p>
       </div>
       <div class="type-grid">
@@ -14,6 +14,9 @@
           </NuxtLink>
         </div>
       </div>
+    </div>
+    <div class="gradient-overlay top">
+      <img src="/images/menushadow2.png" alt="">
     </div>
   </div>
 </template>
@@ -35,24 +38,23 @@ const types = [
   { title: 'Зимняя роскошь', img: '/images/type4.png' },
   { title: 'Желтый луг', img: '/images/type5.png' },
   { title: 'Бургунди', img: '/images/type6.png' },
-  { title: 'Летнее сияние', img: '/images/type6.png' }
+  { title: 'Летнее сияние', img: '/images/type7.png' }
 ]
 </script>
 
 <style scoped>
 .type-wrapper {
   background: #131313;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
-  font-family: sans-serif;
 }
 
 .type-heading {
-  font-size: 24px;
   font-weight: bold;
   color: #fff;
   line-height: 1.2;
-  margin: 1.5rem 1rem;
+  letter-spacing: 1.2px;
+  margin: 14px;
 }
 
 .highlight {
@@ -63,7 +65,10 @@ const types = [
   background: url('/images/typeback.png') no-repeat center;
   background-size: cover;
   width: 100%;
-  padding: 0.5rem 1rem 1.5rem 1rem;
+  height: 150%;
+  border-radius: 10px;
+  padding: 14px;
+  /* margin-bottom: 10rem; */
 }
 
 .type-grid {
@@ -82,7 +87,7 @@ const types = [
 
 .type-img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   display: block;
 }
@@ -93,10 +98,15 @@ const types = [
   padding: 2px 0.2rem;
   position: absolute;
   background: rgba(25, 25, 25, 0.8);
-  width: 44%;
+  width: 45%;
   margin-top: -1.1rem;
   text-align: center;
   border-radius: 0 0 10px 10px;
+}
+
+.type-back h4 {
+  font-size: 20px;
+  color: white;
 }
 
 .cancel {
@@ -104,4 +114,19 @@ const types = [
   color: white;
   cursor: pointer;
 }
+
+.gradient-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 60px;
+    z-index: 4050;
+    pointer-events: none;
+    width: 100%;
+    color: #070707 !important;
+    background-color: #070707 !important;
+  }
+  .gradient-overlay.top {
+    background: linear-gradient(to bottom, rgba(7, 7, 7, 1), transparent);
+  }
 </style>

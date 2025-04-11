@@ -122,42 +122,16 @@ const parseMessage = (text) => {
     font-weight: 500;
     margin-top: 4px;
 }
-
-.message {
-    margin-bottom: 8px;
-    padding: 8px 12px;
-    border-radius: 16px;
-}
-
-.user {
-    background-color: #f0f0f0;
-    align-self: flex-end;
-    margin-left: auto;
-}
-
-.bot {
-    background-color: #333;
-    color: white;
-    align-self: flex-start;
-}
-
-.chat-window {
-    display: flex;
-    flex-direction: column;
-}
-
 .creator {
     position: relative;
     margin-top: 20rem;
 }
-
 .creator img {
     position: fixed;
     margin: auto;
     bottom: 14rem;
     z-index: 0;
 }
-
 .text-fon {
     position: relative;
     width: 100%;
@@ -165,7 +139,6 @@ const parseMessage = (text) => {
     padding: 15px;
     margin: 0 auto;
 }
-
 .text-bg {
     position: absolute;
     bottom: 0;
@@ -176,14 +149,11 @@ const parseMessage = (text) => {
     border-radius: 15px;
     z-index: 0;
 }
-
 .text-fon p {
-    /* color: white; */
     text-align: center;
     position: relative;
     z-index: 1;
 }
-
 .chat-window {
     position: fixed;
     bottom: 5rem;
@@ -196,7 +166,6 @@ const parseMessage = (text) => {
     margin-bottom: 5rem;
     margin-left: -1rem;
 }
-
 .message {
     max-width: 100%;
     padding: 8px 12px;
@@ -205,19 +174,16 @@ const parseMessage = (text) => {
     font-size: 14px;
     word-break: break-word;
 }
-
 .message.user {
     background: white;
     align-self: flex-end;
     color: black !important;
 }
-
 .message.bot {
-    background: #303030;
+    background: #2A2A2A;
     align-self: flex-start;
     color: white;
 }
-
 .creator-input {
     border-radius: 20px;
     border: 1px solid #474747;
@@ -232,7 +198,6 @@ const parseMessage = (text) => {
     bottom: 4rem;
     left: 0.8rem;
 }
-
 .submit-btn {
     border: none;
     background: transparent;
@@ -243,13 +208,11 @@ const parseMessage = (text) => {
     bottom: 4rem;
     right: 0.8rem;
 }
-
 .up {
     position: fixed;
-    top: 0.8rem;
+    top: 1.8rem;
     z-index: 1000;
 }
-
 .firstup {
     background: #303030;
     color: white;
@@ -260,7 +223,6 @@ const parseMessage = (text) => {
     padding-left: 0.4rem;
     font-size: 14px;
 }
-
 .secondup {
     background: white;
     border-radius: 20px;

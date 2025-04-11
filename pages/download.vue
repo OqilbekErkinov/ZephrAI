@@ -1,6 +1,6 @@
 <template>
     <div class="promo-wrapper container">
-        <h1 class="download-title">Загрузить фото можно только один раз!</h1>
+        <h1 class="download-title">Загрузить фото можно только <br> один раз!</h1>
         <p class="download-text">
             Подойдите к выбору внимательно!
             Если сейчас нет подходящих
@@ -105,12 +105,10 @@ export default {
 
 <style scoped>
 .promo-wrapper {
-    background: #0F0F0F;
     color: white;
     padding: 2rem 1rem;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
-    font-family: sans-serif;
 }
 
 .preview-section {
@@ -143,15 +141,13 @@ export default {
 }
 
 .download-title {
-    font-size: 35px;
-    font-weight: 550;
     color: #F0A8E1;
     text-align: left;
 }
 
 .download-text {
     color: #fff;
-    font-size: 17.97px;
+    font-size: 24px;
     text-align: left;
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -160,7 +156,7 @@ export default {
 
 .download-text2 {
     color: #fff;
-    font-size: 17.97px;
+    font-size: 24px;
     text-align: left;
     font-weight: regular;
     margin-bottom: 1.5rem;
@@ -176,8 +172,10 @@ export default {
     border-radius: 10px;
     cursor: pointer;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     transition: all 0.3s ease;
+    font-family: 'Gropled', sans-serif;
+    font-size: 20px;
 }
 
 .download-button:disabled {

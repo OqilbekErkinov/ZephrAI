@@ -43,9 +43,9 @@
                         <path d="M15 1H10.1191M15 1V5.87048M15 1L6.86523 9.11747M7.50781 2.01205H1V15H14.0156V8.50602"
                             stroke="white" stroke-width="0.9" stroke-linecap="round" />
                     </svg>
-                    <svg class="line5" width="347" height="2" viewBox="0 0 347 2" fill="none"
+                    <svg class="line5" width="400" height="2" viewBox="0 0 400 2" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 1H347" stroke="#fff" stroke-width="0.5" />
+                        <path d="M0 1H400" stroke="#fff" stroke-width="0.5" />
                     </svg>
                 </div>
             </div>
@@ -312,17 +312,16 @@ function shareToSocial(platform) {
 .viewer-footer {
     display: flex;
     justify-content: flex-end;
-    padding: 16px;
+    padding: 16px auto;
     background-color: rgba(0, 0, 0, 0.8);
+
 }
 
 .back-button {
     display: flex;
     align-items: center;
     color: white;
-    cursor: pointer;
-    background: none;
-    border: none;
+    cursor: p
 }
 
 .back-button span {
@@ -362,7 +361,8 @@ function shareToSocial(platform) {
 .share-button {
     cursor: pointer;
     padding: 8px;
-    /* margin-top: -5rem; */
+    margin: auto;
+    margin-top: -7rem;
 }
 
 .share {

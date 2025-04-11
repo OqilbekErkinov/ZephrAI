@@ -43,7 +43,7 @@ body {
   }
   p {
     font-size: 20px;
-    color: #ffff;
+    /* color: #ffff; */
     text-align: left;
   }
   .image-gallery {
@@ -120,7 +120,7 @@ body {
     margin-top: 2rem;
     padding: 8px;
     border-radius: 15px;
-    width: 65%;
+    /* width: 65%; */
     height: 270px;
   }
   .image-galleryyy .image-card{
@@ -170,22 +170,6 @@ body {
   .background-image {
     position: relative;
     overflow: hidden;
-  }
-  .gradient-overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 60px;
-    z-index: 4000;
-    pointer-events: none;
-  }
-  .gradient-overlay.top {
-    top: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
-  }
-  .gradient-overlay.bottom {
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
   }
   .image-container {
     display: flex;

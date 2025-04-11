@@ -44,7 +44,7 @@ const images = [
     background: #0F0F0F;
     color: white;
     max-width: 450px;
-    /* margin: 0.5rem; */
+    margin-bottom: 1rem;
     font-family: sans-serif;
 }
 
@@ -67,7 +67,7 @@ const images = [
     color: #F0A8E1;
     text-align: left;
     margin-top: 1rem;
-    margin: 1rem;
+    margin: 14px;
 }
 
 .subtext {
@@ -76,7 +76,7 @@ const images = [
     text-align: left;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
-    margin: 1rem;
+    margin: 14px;
 }
 
 .highlight {
@@ -90,7 +90,7 @@ const images = [
     padding: 0.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
-    margin: 1rem;
+    margin: 14px;
 }
 
 .premium-box h3 {

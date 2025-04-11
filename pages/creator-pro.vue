@@ -8,7 +8,7 @@
             <img src="/images/chat-back.png" alt="">
             <div class="text-fon">
                 <div v-if="messages.length === 0" class="text-bg">
-                    <p>
+                    <p class="mb-0">
                         <svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M11 0C11 0.0206032 10.9805 0.058982 10.9431 0.113729L7 8H14L1 19.5L6.5 11H0C3.4778 7.68028 10.2543 1.12186 10.9431 0.113729L11 0Z"
@@ -219,31 +219,29 @@ const parseMessage = (text) => {
 
 .creator img {
     position: fixed;
-    /* right: 2.5rem; */
-    bottom: 9rem;
+    left: 2.5rem;
+    right: 0;
+    bottom: 14rem;
     z-index: 0;
 }
 
 .text-fon {
     position: relative;
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
-    padding: 15px;
     margin: 0 auto;
 }
 
 .text-bg {
-    position: fixed;
-    top: 10rem;
-    left: 2rem;
-    right: 0;
-    width: 80%;
-    height: 29%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: rgba(42, 42, 42, 0.87);
-    /* filter: blur(1px); */
+    filter: blur(1px);
     border-radius: 15px;
     z-index: 0;
-    padding: 1rem;
+    padding: 15px;
 }
 
 .text-bg p {
@@ -266,7 +264,7 @@ const parseMessage = (text) => {
     z-index: 2;
     display: flex;
     flex-direction: column-reverse;
-    max-height: 71%;
+    max-height: 77%;
     width: 92%;
     overflow-y: auto;
     margin-bottom: 5rem;
@@ -300,12 +298,12 @@ const parseMessage = (text) => {
     background: #191919;
     margin-bottom: 3rem;
     height: 40px;
-    width: 78%;
+    width: 80%;
     color: white;
     outline: none;
     padding-left: 1rem;
     position: fixed;
-    bottom: 4rem;
+    bottom: 4.7rem;
     left: 0.8rem;
 }
 
@@ -316,13 +314,13 @@ const parseMessage = (text) => {
     cursor: pointer;
     padding: 0;
     position: fixed;
-    bottom: 4rem;
+    bottom: 4.7rem;
     right: 0.8rem;
 }
 
 .up {
     position: fixed;
-    top: 0.8rem;
+    top: 1.8rem;
     z-index: 1000;
 }
 

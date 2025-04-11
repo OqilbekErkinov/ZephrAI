@@ -22,7 +22,7 @@
     { name: 'Click', icon: '/images/pay-click.png', link: '/premium' },
     { name: 'Payme', icon: '/images/pay-payme.png', link: 'https://payme.uz/pay' },
     { name: 'Visa', icon: '/images/pay-visa.png', link: '/creator-pro' },
-    { name: 'YooKassa', icon: '/images/pay-yookassa.png', link: 'https://yookassa.ru/pay' },
+    { name: 'YooKassa', icon: '/images/pay-yookassa.png', link: '/gallery-pro' },
   ]
   
   const closeModal = () => {

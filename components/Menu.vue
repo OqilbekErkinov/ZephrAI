@@ -83,7 +83,7 @@
     background: url('/images/menushadow.png') no-repeat center; 
     background-size: cover;
     width: 100%;
-    height: 10%;
+    height: 13.5%;
     position: fixed;
     bottom: 0rem;
     left: 0;

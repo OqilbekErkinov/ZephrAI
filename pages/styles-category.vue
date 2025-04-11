@@ -1,6 +1,6 @@
 <template>
     <div class="style-wrapper">
-        <h2 class="style-heading"><span class="highlight">Выбирайте</span><br>готовый стиль</h2>
+        <h1 class="style-heading"><span class="highlight">Выбирайте</span><br>готовый стиль</h1>
         <div class="style-grid">
             <div class="style-card" v-for="(style, i) in styles" :key="i">
                 <img :src="style.img" :alt="style.title" class="style-img" />
@@ -30,18 +30,17 @@ const styles = [
 <style scoped>
 .style-wrapper {
     background: #131313;
-    padding: 2rem 1rem;
-    max-width: 400px;
+    padding: 14px;
+    max-width: 450px;
     margin: 0 auto;
-    font-family: sans-serif;
 }
 
 .style-heading {
-    font-size: 24px;
     font-weight: bold;
     color: #fff;
     margin-bottom: 1rem;
     line-height: 1.2;
+    letter-spacing: 1.2px;;
 }
 
 .highlight {
@@ -64,19 +63,19 @@ const styles = [
 
 .style-img {
     width: 100%;
-    height: 150px;
+    height: 168px;
     object-fit: cover;
     display: block;
 }
 
 .style-title {
     color: white;
-    font-size: 10px;
+    font-size: 14px;
     padding: 2px 0.2rem;
     position: absolute;
     background: rgba(25, 25, 25, 0.8);
-    width: 44%;
-    margin-top: -1.1rem;
+    width: 44.9%;
+    margin-top: -1.5rem;
     text-align: center;
     border-radius: 0 0 10px 10px;
 }

@@ -21,25 +21,21 @@ onMounted(() => {
 </script>
 <style scoped>
 .success-wrapper {
-    background: #0F0F0F;
     color: white;
-    padding: 2rem 1rem;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
-    font-family: sans-serif;
+    margin-top: 5rem;
 }
 
 .success-title {
-    font-size: 33px;
-    font-weight: 550;
     color: #F0A8E1;
-    text-align: left;
+    text-align: center;
 }
 
 .success-text {
     color: #fff;
-    font-size: 17.97px;
-    text-align: left;
+    font-size: 24px;
+    text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;
     font-weight: regular;
@@ -52,6 +48,6 @@ onMounted(() => {
     width: 50%;
     margin-top: 4rem;
     margin-bottom: 6rem;
-    margin-right: 7.2rem;
+    margin-right: 7.5rem;
 }
 </style>

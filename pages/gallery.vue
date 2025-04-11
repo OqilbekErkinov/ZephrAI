@@ -2,8 +2,8 @@
     <div class="container about-page">
       <div class="content-wrapper">
         <img class="about-image" src="/images/gallery-back.png" alt="Textpic">
-        <NuxtLink to="/gallery-pro">
-          <button class="about-button">Создать генерацию</button>
+        <NuxtLink to="/styles">
+          <button class="about-button">Premium</button>
         </NuxtLink>
       </div>
     </div>

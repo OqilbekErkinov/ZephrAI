@@ -24,7 +24,7 @@
     </div>
     <div>
       <h1 class="mt-3"><span style="color: #F0A8E1">Попробуй,</span> как это работает!</h1>
-      <p>ZephyrAI покажет тебя в новом облике!</p>
+      <p class="text-light">ZephyrAI покажет тебя в новом облике!</p>
     </div>
 
     <div class="second-gallery">
@@ -106,9 +106,8 @@
 
     <div class="third-gallery">
       <div>
-        <h1 style="color: #F0A8E1">Кадры просто 
-супер</h1>
-        <p>Элегантность в каждой детали, совершенство в каждом образе!</p>
+        <h1 style="color: #F0A8E1">Кадры просто супер</h1>
+        <p class="text-light">Элегантность в каждой детали, совершенство в каждом образе!</p>
       </div>
       <div class="image-grid third">
         <div class="image-card special" v-for="(image, index) in thirdGalleryImages" :key="index">

@@ -5,7 +5,7 @@
         Убедитесь, что ваш выбор <br> правильный, так как при <br> создании цифрового аватара, <br> изменить данные будет нельзя.
       </p>
       <div class="premium-box">
-        <h3>Названия моделя</h3>
+        <h4 class="mb-3">Названия моделя</h4>
         <input
           type="text"
           v-model="name"
@@ -92,15 +92,12 @@
 .subtitle-greyed {
     color: #F0A8E1 !important;
 }
-
-
-
   .promo-wrapper {
     background: #131313;
     color: white;
     max-width: 450px;
-    font-family: sans-serif;
-    padding: 1rem;
+    padding: 14px;
+    margin-bottom: 1rem;
   }
   
   .main-titlee {

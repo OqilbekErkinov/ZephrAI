@@ -34,8 +34,9 @@
 }
 .creator img {
     position: fixed;
-    right: 2.5rem;
-    bottom: 9rem;
+    right: 0;
+    left: 2.5rem;
+    bottom: 14rem;
     z-index: 0;
 }
 .text-fon {
@@ -70,12 +71,12 @@
     background: #191919;
     margin-bottom: 3rem;
     height: 40px;
-    width: 78%;
+    width: 80%;
     color: white;
     outline: none;
     padding-left: 1rem;
     position: fixed;
-    bottom: 4.5rem;
+    bottom: 4.7rem;
     left: 0.8rem;
 }
 
@@ -86,13 +87,13 @@
     cursor: pointer;
     padding: 0;
     position: fixed;
-    bottom: 4.5rem;
+    bottom: 4.7rem;
     right: 0.8rem;
 }
 
 .up {
     position: fixed;
-    top: 0.8rem;
+    top: 1.8rem;
     z-index: 1000;
 }
 
