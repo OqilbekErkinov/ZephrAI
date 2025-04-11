@@ -233,15 +233,13 @@ const parseMessage = (text) => {
 }
 
 .text-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: fixed;
+    width: 82%;
     background: rgba(42, 42, 42, 0.87);
-    filter: blur(1px);
     border-radius: 15px;
     z-index: 0;
     padding: 15px;
+    margin: auto;
 }
 
 .text-bg p {
@@ -278,6 +276,7 @@ const parseMessage = (text) => {
     border-radius: 15px;
     font-size: 14px;
     word-break: break-word;
+    margin-bottom: 1rem;
 }
 
 .message.user {

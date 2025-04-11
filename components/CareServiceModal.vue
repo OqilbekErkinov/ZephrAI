@@ -70,12 +70,12 @@ watch(() => props.visible, (newVisible) => {
 
 .modal-title {
     color: white;
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: regular;
 }
 .modal-text {
     color: white;
-    font-size: 1.2rem;
+    font-size: 20px;
     font-weight: regular;
 }
 
