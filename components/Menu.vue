@@ -1,6 +1,7 @@
 <template>
+    <div class="menu-back container" style="padding: 0 !important; margin: 0">
     <div class="menu container">
-        <div classs="menu-back">
+        <div classs="menu-back2">
             <NuxtLink to="/" class="me-2" style="margin-left: -0.6rem;" :class="{ 'active': $route.path === '/' }">
                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_6)">
@@ -29,8 +30,8 @@
                     </defs>
                 </svg>
             </NuxtLink>
-            <NuxtLink to="/styles" style="margin-top: -1.2rem;" :class="{ 'active': $route.path === '/styles' }">
-                <img :src="$route.path === '/styles' ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
+            <NuxtLink to="/styles" :class="{ 'active': $route.path === '/styles' }">
+                <img style="margin-top: -1.2rem;" :src="$route.path === '/styles' ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
             </NuxtLink>
             <NuxtLink to="/creator" class="me-3" style="margin-left: -0.6rem;"
                 :class="{ 'active': $route.path === '/creator' }">
@@ -56,23 +57,40 @@
             </NuxtLink>
         </div>
     </div>
+</div>
 </template>
 <style scoped>
 .menu {
     position: fixed;
-    bottom: 1rem;
+    bottom: 1.5rem;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background: #2A2A2A;
     box-shadow: 0 0 8px rgba(240, 168, 225, 0.5);
+    /* background: url('/images/backmenu.svg') no-repeat center;  */
     padding: 8px;
     border-radius: 15px;
     width: 70%;
     height: 50px;
     color: white;
-    z-index: 1100;
+    z-index: 4100;
+
+}
+.menu-back {
+    background: url('/images/menushadow.png') no-repeat center; 
+    background-size: cover;
+    width: 100%;
+    Height: 30%;
+    position: fixed;
+    bottom: 0rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4150;
 }
 </style>

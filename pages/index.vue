@@ -1,8 +1,8 @@
 <template>
   <div class="home-page container text-center py-4">
-    <h1>Zephyr<span style="color: #F0A8E1">AI</span> -</h1>
+    <h1 style="font-size: 48px;">Zephyr<span style="color: #F0A8E1">AI</span> -</h1>
     <h3>персональный ассистент по нейрофотографиям!</h3>
-    <p class="mt-3">
+    <p class="mt-3" style="color: #BCBCBC;">
       ZephyrAI - нейросеть, которая обучается твоей внешности, создавая
       впечатляющие изображения, где ты – в центре внимания!
     </p>
@@ -10,10 +10,10 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <img class="large-image2" src="/images/image1.jpg" alt="Image 1" />
+          <img class="large-image2" src="/images/home-large1.png" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <img class="large-image" src="/images/image2.jpg" alt="Image 2" />
+          <img class="large-image" src="/images/home-large2.png" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div>
-      <h3 class="mt-3"><span style="color: #F0A8E1">Попробуй,</span> как это работает!</h3>
+      <h1 class="mt-3"><span style="color: #F0A8E1">Попробуй,</span> как это работает!</h1>
       <p>ZephyrAI покажет тебя в новом облике!</p>
     </div>
 
@@ -31,29 +31,29 @@
       <div class="background-image">
 
         <!-- Gradientlar -->
-        <div class="gradient-overlay top">
+        <!-- <div class="gradient-overlay top">
           <img src="/images/gradient1.png" alt="">
         </div>
         <div class="gradient-overlay bottom">
           <img src="/images/gradient2.png" alt="">
-        </div>
+        </div> -->
 
         <div class="image-container">
           <div class="image-card speciall mt-4">
-            <img src="/images/img1.jpg" alt="Image 3" />
+            <img src="/images/home7.png" alt="Image 3" />
             <div class="zagruzit">Загрузи...</div>
           </div>
           <div class="image-galleryyy">
             <div class="image-card special me-2">
-              <img src="/images/img2.png" alt="Image 4" />
+              <img src="/images/home5.png" alt="Image 4" />
             </div>
             <div class="image-card special">
-              <img src="/images/img3.png" alt="Image 5" />
+              <img src="/images/home6.png" alt="Image 5" />
             </div>
           </div>
         </div>
 
-        <div class="overlay-text">Наслаждайтесь волшебством
+        <!-- <div class="overlay-text">Наслаждайтесь волшебством
           <svg width="25" height="25" viewBox="0 0 28 31" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M5.104 13.7423C16.8658 13.1031 14.9839 11.0258 16.5522 0.31958C18.1204 11.0258 16.2385 13.1031 28.0003 13.7423C16.2385 14.3814 18.1204 16.4588 16.5522 27.1649C14.9839 16.4588 16.8658 14.3814 5.104 13.7423Z"
@@ -100,15 +100,14 @@
               </filter>
             </defs>
           </svg>
-
-        </div>
+        </div> -->
       </div>
     </div>
 
     <div class="third-gallery">
       <div>
-        <h3 style="color: #F0A8E1">Кадры просто 
-супер</h3>
+        <h1 style="color: #F0A8E1">Кадры просто 
+супер</h1>
         <p>Элегантность в каждой детали, совершенство в каждом образе!</p>
       </div>
       <div class="image-grid third">
@@ -123,19 +122,19 @@
 <script setup>
 import { ref } from 'vue';
 const images = ref([
-  "/images/image3.jpg",
-  "/images/image4.jpg",
-  "/images/image5.png",
-  "/images/image6.jpg"
+  "/images/home4.png",
+  "/images/home3.png",
+  "/images/home2.png",
+  "/images/home1.png"
 ]);
 const thirdGalleryImages = ref([
-  "/images/img5.png",
-  "/images/img6.png",
-  "/images/img7.png",
-  "/images/img8.png",
-  "/images/img9.png",
-  "/images/img10.png",
-  "/images/img11.png",
-  "/images/img12.png"
+  "/images/home10.png",
+  "/images/home11.png",
+  "/images/home12.png",
+  "/images/home13.png",
+  "/images/home14.png",
+  "/images/home15.png",
+  "/images/home16.png",
+  "/images/home17.png"
 ]);
 </script>

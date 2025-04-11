@@ -1,25 +1,49 @@
+/* @font-face {
+  font-family: 'Gropled';
+  src: url('/fonts/Gropled-Bold.otf') format('otf');
+  font-weight: 700;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url('/fonts/FuturaCyrillicBold.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicBook.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicDemi.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicExtraBold.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicHeavy.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicLight.ttf') format('ttf'),
+       url('/fonts/FuturaCyrillicMedium.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: 'Futura PT', sans-serif !important;
+} 
 body {
   background-color: #131313;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 .container {
-    max-width: 400px;
+    max-width: 450px;
+    padding: 14px !important;
   }
   h1 {
-    font-size: 24px;
+  font-family: 'Gropled', sans-serif;
+  font-size: 40px;
     font-weight: bold;
     color: #ffffff;
     text-align: left;
   }
   h3 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #cccccc;
+    font-size: 38px;
+    font-weight: 600;
+    color: #ffff;
     text-align: left;
   }
-  .home-page p {
-    font-size: 14px;
-    color: #aaaaaa;
+  p {
+    font-size: 20px;
+    color: #ffff;
     text-align: left;
   }
   .image-gallery {
@@ -28,7 +52,7 @@ body {
   }
   .image-grid {
     display: flex;
-    gap: 10px;
+    gap: 8px;
   }
   .image-card {
     border-radius: 10px;
@@ -48,14 +72,16 @@ body {
     transform: scale(1.05);
   }
   .image-grid.small {
-    justify-content: center;
+    justify-content: space-between;
     background: #222222;
-    padding: 10px;
+    padding: 8px;
     border-radius: 10px;
   }
   .image-card.small {
-    width: 70px;
-    height: 74px;
+    max-width: 90px;
+    width: 100%;
+    max-height: 100px;
+    height: 100%;
     border-radius: 10px !important;
   }
   .small img {
@@ -71,10 +97,11 @@ body {
     margin-left: 0.8rem;
     position: relative;
     z-index: 1;
+    margin-top: 5.5rem !important;
   }
   .speciall img{
-    height: 150px;
-    width: 95px;
+    height: 180px;
+    width: 100px;
     margin-left: -0.4rem;
   }
   .zagruzit {
@@ -90,18 +117,19 @@ body {
     position: relative;
     display: flex;
     background: #222222;
+    margin-top: 2rem;
     padding: 8px;
     border-radius: 15px;
-    /* width: 70%; */
-    height: 196px;
+    width: 65%;
+    height: 270px;
   }
   .image-galleryyy .image-card{
-    height: 180px;
-    width: 100px
+    height: 250px;
+    width: 129px
   }
   .image-galleryyy .image-card img{
-    height: 180px;
-    width: 100%;
+    height: 250px;
+    width: 129px;
   }
   .overlay-text {
     color: #fff;
@@ -112,22 +140,25 @@ body {
     margin-top: 0.5rem;
     z-index: 4005 !important;
   }
+  .container .second-gallery {
+    margin: 0 -14px;
+  }
   .second-gallery {
     position: relative;
   }
   .background-image {
     position: relative;
-    background: url('/images/back1.jpg') no-repeat center;
+    background: url('/images/home-back.png') no-repeat center;
     background-size: cover;
     padding: 20px 0;
     /* box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.9), inset 0 -10px 20px rgba(0, 0, 0, 0.9); */
-    height: 300px;
+    height: 400px;
     overflow: hidden;
   }
   .background-image::before {
     content: "";
     position: absolute;
-    inset: 0;
+    /* inset: 0; */
     background: rgba(0, 0, 0, 0.5); 
     z-index: 0;
     
@@ -160,7 +191,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
     margin-left: -0.8rem;
   }
   .third-gallery {
@@ -180,22 +211,21 @@ body {
   }
   .third-gallery.image-card.special {
     width: 100px;
-    height: 140px;
+    height: 160px;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
-    background: #111;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    background: #222222;
   }
   .third-gallery .image-grid .image-card img{
-    height: 140px;
+    height: 160px;
   }
 .large-1 {
   background: #222222;
   border-radius: 25px;
   padding: 10px!important;
   margin-left: -3.5rem;
-  margin-right: 0.5rem;
+  margin-right: rem;
   /* width: 200px !important;
   height: 280px !important; */
 }
