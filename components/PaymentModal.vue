@@ -21,10 +21,10 @@ const props = defineProps(['visible'])
 const emit = defineEmits(['close'])
 
 const methods = [
-  { name: 'Click', icon: '/images/payclick.png', link: '/premium' },
-  { name: 'Payme', icon: '/images/paypay.png', link: 'https://payme.uz/pay' },
-  { name: 'Visa', icon: '/images/payvis.png', link: '/creator-pro' },
-  { name: 'YooKassa', icon: '/images/payyuk.png', link: '/gallery-pro' },
+  { name: 'Click', icon: '/images/pay-click.png', link: '/premium' },
+  { name: 'Payme', icon: '/images/pay-payme.png', link: 'https://payme.uz/pay' },
+  { name: 'Visa', icon: '/images/pay-visa.png', link: '/creator-pro' },
+  { name: 'YooKassa', icon: '/images/pay-yookassa.png', link: '/gallery-pro' },
 ]
 
 const closeModal = () => {

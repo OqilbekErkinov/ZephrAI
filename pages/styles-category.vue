@@ -1,10 +1,11 @@
 <template>
     <div class="style-wrapper">
-        <h1 class="style-heading"><span class="highlight">Выбирайте</span><br><span style="font-family: Futura PT, sans-serif">готовый стиль</span></h1>
+        <h1 class="style-heading"><span class="highlight">Выбирайте</span><br><span
+                style="font-family: Futura PT, sans-serif">готовый стиль</span></h1>
         <div class="style-grid">
-            <div class="style-card" v-for="(style, i) in styles" :key="i">
-                <img :src="style.img" :alt="style.title" class="style-img" />
-                <NuxtLink :to="{ path: '/styles-type', query: { category: style.title } }">
+            <div class="style-card" v-for="(style, i) in styles" :key="i"
+                :style="{ backgroundImage: `url(${style.img})` }">
+                <NuxtLink :to="{ path: '/styles-type', query: { category: style.title } }" style="text-decoration: none;">
                     <p class="style-title">{{ style.title }}</p>
                 </NuxtLink>
             </div>
@@ -40,7 +41,8 @@ const styles = [
     color: #fff;
     margin-bottom: 1rem;
     line-height: 1.2;
-    letter-spacing: 1.2px;;
+    letter-spacing: 1.2px;
+    ;
 }
 
 .highlight {
@@ -55,28 +57,28 @@ const styles = [
 }
 
 .style-card {
-    background: rgba(25, 25, 25, 0.8);
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
+    height: 180px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
-.style-img {
-    width: 100%;
-    height: 168px;
-    object-fit: cover;
-    display: block;
-}
 
 .style-title {
-    color: white;
-    font-size: 14px;
-    padding: 2px 0.2rem;
-    position: absolute;
-    background: rgba(25, 25, 25, 0.8);
-    width: 44.9%;
-    margin-top: -1.5rem;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
+  color: white;
+  font-size: 14px;
+  padding: 5px 0.2rem;
+  background: rgba(25, 25, 25, 0.65);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
+  border-radius: none;
+  overflow: hidden;
+  margin: 0;
 }
 </style>

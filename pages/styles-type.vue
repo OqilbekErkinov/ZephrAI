@@ -8,9 +8,8 @@
       </div>
       <div class="type-grid">
         <div class="type-card" v-for="(type, i) in types" :key="i" :style="{ backgroundImage: `url(${type.img})` }">
-
         <!-- <img :src="type.img" :alt="type.title" class="type-img" /> -->
-        <NuxtLink :to="{ path: '/styles-pro', query: { type: type.title } }">
+        <NuxtLink :to="{ path: '/styles-pro', query: { type: type.title } }" style="text-decoration: none;">
           <p class="type-title">{{ type.title }}</p>
         </NuxtLink>
       </div>
@@ -91,18 +90,11 @@ const types = [
   justify-content: end;
 }
 
-.type-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
 
 .type-title {
   color: white;
   font-size: 14px;
   padding: 5px 0.2rem;
-  /* position: absolute; */
   background: rgba(25, 25, 25, 0.65);
   backdrop-filter: blur(10px);
   width: 100%;

@@ -446,7 +446,7 @@ function shareToSocial(platform) {
 .slide-content {
     position: relative;
     width: 100%;
-    /* height: 380px; */
+    min-height: 350px;
     border-radius: 15px;
     overflow: hidden;
 }

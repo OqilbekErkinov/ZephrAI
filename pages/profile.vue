@@ -56,6 +56,19 @@
                     <div v-if="showSettings" class="dropdown">
                         <div class="dropdown-subtitle" @click="toggleAvatarDropdown"
                             :class="{ 'subtitle-greyed': showAvatarDropdown }">
+                            <svg class="me-2" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_449_7706)">
+                                    <path
+                                        d="M15.085 14.8289C14.3762 13.0959 12.6729 11.875 10.6875 11.875H8.3125C6.32715 11.875 4.62383 13.0959 3.91504 14.8289C2.59395 13.441 1.78125 11.567 1.78125 9.5C1.78125 5.23613 5.23613 1.78125 9.5 1.78125C13.7639 1.78125 17.2188 5.23613 17.2188 9.5C17.2188 11.567 16.4061 13.441 15.085 14.8289ZM9.5 19C12.0196 19 14.4359 17.9991 16.2175 16.2175C17.9991 14.4359 19 12.0196 19 9.5C19 6.98044 17.9991 4.56408 16.2175 2.78249C14.4359 1.00089 12.0196 0 9.5 0C6.98044 0 4.56408 1.00089 2.78249 2.78249C1.00089 4.56408 0 6.98044 0 9.5C0 12.0196 1.00089 14.4359 2.78249 16.2175C4.56408 17.9991 6.98044 19 9.5 19ZM6.23438 7.42188C6.23438 8.28797 6.57843 9.1186 7.19085 9.73102C7.80328 10.3434 8.6339 10.6875 9.5 10.6875C10.3661 10.6875 11.1967 10.3434 11.8091 9.73102C12.4216 9.1186 12.7656 8.28797 12.7656 7.42188C12.7656 6.55578 12.4216 5.72515 11.8091 5.11273C11.1967 4.50031 10.3661 4.15625 9.5 4.15625C8.6339 4.15625 7.80328 4.50031 7.19085 5.11273C6.57843 5.72515 6.23438 6.55578 6.23438 7.42188Z"
+                                        fill="#515151" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_449_7706">
+                                        <rect width="19" height="19" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
                             Выбор аватара
                             <span class="menu-arrow">
                                 <svg v-if="showAvatarDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
@@ -85,7 +98,7 @@
                                         </svg>
                                     </span>
                                 </div>
-                                <div class="dropdown-ite add-new" @click="addNewAvatar">Добавить новый аватар
+                                <div class="dropdown-ite add-new mt-4" @click="addNewAvatar">Добавить новый аватар
                                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.70459 6.61523H12M6.35231 1.23046V12" stroke="#F0A8E1"
@@ -96,6 +109,12 @@
                         </transition>
                         <div class="dropdown-subtitle" @click="toggleAspectDropdown"
                             :class="{ 'subtitle-greyed': showAspectDropdown }">
+                            <svg class="me-2" width="17" height="19" viewBox="0 0 17 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.5714 2.96875C14.9054 2.96875 15.1786 3.23594 15.1786 3.5625V15.4375C15.1786 15.7641 14.9054 16.0312 14.5714 16.0312H2.42857C2.09464 16.0312 1.82143 15.7641 1.82143 15.4375V3.5625C1.82143 3.23594 2.09464 2.96875 2.42857 2.96875H14.5714ZM2.42857 1.1875C1.08906 1.1875 0 2.25254 0 3.5625V15.4375C0 16.7475 1.08906 17.8125 2.42857 17.8125H14.5714C15.9109 17.8125 17 16.7475 17 15.4375V3.5625C17 2.25254 15.9109 1.1875 14.5714 1.1875H2.42857Z"
+                                    fill="#515151" />
+                            </svg>
                             Соотношение сторон
                             <span class="menu-arrow">
                                 <svg v-if="showAspectDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
@@ -127,6 +146,11 @@
                                 </div>
                             </div>
                         </transition>
+                        <div class="dropdown-subtitle" @click="showLanguageModal = true">Язык
+                            <span class="menu-arrow" style="color: #515151">Русский</span>
+                        </div>
+                        <LanguageModal :visible="showLanguageModal" @close="showLanguageModal = false" />
+
                     </div>
                 </transition>
             </div>
@@ -195,6 +219,7 @@ import PaymentModal from '~/components/PaymentModal.vue'
 import CreditInfoModal from '~/components/CreditInfoModal.vue'
 import CareServiceModal from '~/components/CareServiceModal.vue'
 import SocialNetworkModal from '~/components/SocialNetworkModal.vue'
+import LanguageModal from '~/components/LanguageModal.vue'
 
 const showSettings = ref(false)
 const showAvatarDropdown = ref(false)
@@ -204,6 +229,7 @@ const showCareServiceModal = ref(false)
 const showSocialNetworkModal = ref(false)
 const showTariffDropdown = ref(false)
 const showPaymentModal = ref(false)
+const showLanguageModal = ref(false)
 
 const avatars = ref(['Аватар 1', 'Аватар 2', 'Наташа'])
 const selectedAvatar = ref('Аватар 2')
@@ -404,7 +430,7 @@ const selectPackage = (amount) => {
     font-size: 16px;
     padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     cursor: pointer;
     color: #fff;
@@ -541,5 +567,10 @@ const selectPackage = (amount) => {
     /* adjust based on expected content height */
     opacity: 1;
     transform: translateY(0);
+}
+
+.menu-arrow {
+    display: flex;
+    margin-left: auto;
 }
 </style>
