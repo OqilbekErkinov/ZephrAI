@@ -61,14 +61,12 @@
     justify-content: space-around;
     background: #2A2A2A;
     box-shadow: 0 0 8px rgba(240, 168, 225, 0.5);
-    /* background: url('/images/backmenu.svg') no-repeat center;  */
     padding: 8px;
     border-radius: 15px;
     width: 70%;
     height: 50px;
     color: white;
     z-index: 4100;
-
 }
 
 .menu-back {
