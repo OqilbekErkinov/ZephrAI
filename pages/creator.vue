@@ -64,8 +64,8 @@ const count = ref(100)
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(42, 42, 42, 0.87);
-    filter: blur(1px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     z-index: 0;
 }

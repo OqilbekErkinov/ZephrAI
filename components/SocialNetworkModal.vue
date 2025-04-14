@@ -1,4 +1,5 @@
 <template>
+    <transition name="fade-scale">
     <div v-if="visible" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
@@ -20,9 +21,9 @@
                     <img src="/images/icon-facebook.png" class="icon" />
                 </a>
             </div>
-
         </div>
     </div>
+</transition>
 </template>
 
 <script setup>
@@ -120,4 +121,19 @@ watch(() => props.visible, (newVisible) => {
 .pereyti-btn:hover {
     background-color: #ff86e5;
 }
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.fade-scale-enter-to,
+.fade-scale-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
 </style>

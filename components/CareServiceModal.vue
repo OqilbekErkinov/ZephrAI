@@ -1,27 +1,28 @@
 <template>
-    <div v-if="visible" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="modal-title">Службу заботы</span>
-                <button @click="closeModal" class="close-btn">
-                    <svg width="14" height="14" viewBox="0 0 14 14"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-main">
-                <span class="modal-text"> Нажмите на кнопку ниже, чтобы перейти <br>
-                    в нашу Службу заботы — мы всегда <br>
-                    готовы помочь вам и ответить на любые <br>
-                    вопросы</span>
-            </div>
-            <a href="https://t.me/king_006x" target="_blank" class="pereyti-btn" style="text-decoration: none;"
+    <transition name="fade-scale">
+        <div v-if="visible" class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="modal-title">Службу заботы</span>
+                    <button @click="closeModal" class="close-btn">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-main">
+                    <span class="modal-text"> Нажмите на кнопку ниже, чтобы перейти <br>
+                        в нашу Службу заботы — мы всегда <br>
+                        готовы помочь вам и ответить на любые <br>
+                        вопросы</span>
+                </div>
+                <a href="https://t.me/king_006x" target="_blank" class="pereyti-btn" style="text-decoration: none;"
                     @click="selectPackage(amount)">
                     Перейти
-            </a>
+                </a>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script setup>
@@ -78,6 +79,7 @@ watch(() => props.visible, (newVisible) => {
     font-size: 24px;
     font-weight: regular;
 }
+
 .modal-text {
     color: white;
     font-size: 20px;
@@ -109,4 +111,21 @@ watch(() => props.visible, (newVisible) => {
     background-color: #ff86e5;
 }
 
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+    transition: all 0.3s ease;
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.fade-scale-enter-to,
+.fade-scale-leave-from {
+    opacity: 1;
+    transform: scale(1);
+}
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <transition name="fade-scale">
     <div v-if="visible" class="modal-overlay">
       <div class="modal-content">
         <div class="modal-header">
@@ -12,28 +13,29 @@
         </div>
       </div>
     </div>
-  </template>
-  
-  <script setup>
-  const props = defineProps(['visible'])
-  const emit = defineEmits(['close'])
-  
-  const methods = [
-    { name: 'Click', icon: '/images/payclick.png', link: '/premium' },
-    { name: 'Payme', icon: '/images/paypay.png', link: 'https://payme.uz/pay' },
-    { name: 'Visa', icon: '/images/payvis.png', link: '/creator-pro' },
-    { name: 'YooKassa', icon: '/images/payyuk.png', link: '/gallery-pro' },
-  ]
-  
-  const closeModal = () => {
-    emit('close')
-  }
-  
-  const pay = (method) => {
-    window.location.href = method.link
-  }
+  </transition>
+</template>
 
-  watch(() => props.visible, (newVisible) => {
+<script setup>
+const props = defineProps(['visible'])
+const emit = defineEmits(['close'])
+
+const methods = [
+  { name: 'Click', icon: '/images/payclick.png', link: '/premium' },
+  { name: 'Payme', icon: '/images/paypay.png', link: 'https://payme.uz/pay' },
+  { name: 'Visa', icon: '/images/payvis.png', link: '/creator-pro' },
+  { name: 'YooKassa', icon: '/images/payyuk.png', link: '/gallery-pro' },
+]
+
+const closeModal = () => {
+  emit('close')
+}
+
+const pay = (method) => {
+  window.location.href = method.link
+}
+
+watch(() => props.visible, (newVisible) => {
   if (newVisible) {
     document.body.style.overflow = 'hidden';
     // window.scrollTo(0, 0);
@@ -41,87 +43,103 @@
     document.body.style.overflow = 'auto';
   }
 })
-  </script>
-  
-  <style scoped>
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-    z-index: 50;
-    overflow-y: auto;
-  }
-  
-  .modal-content {
-    background-color: #131313;
-    border-radius: 1rem 1rem 0 0;
-    padding: 16px;
-    width: 100%;
-    max-width: 500px;
-    height: 50%;
-  }
-  
-  .modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  
-  .modal-title {
-    color: white;
-    font-size: 1rem;
-  }
-  
-  .close-btn {
-    color: white;
-    font-size: 1.5rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .payment-methods {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  
-  .payment-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8px;
-    background: transparent;
-    border-radius: 0.375rem;
-    transition: background-color 0.2s;
-    border: none;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  .payment-button:hover {
-    background: rgba(255, 255, 255, 0.001);
-  }
-  
-  .payment-icon {
-    height: 2.8rem;
-  }
-  
-  .fixed-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #333;
-    z-index: 100;
-  }
-  </style>
-  
+</script>
+
+<style scoped>
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  z-index: 50;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #131313;
+  border-radius: 1rem 1rem 0 0;
+  padding: 16px;
+  width: 100%;
+  max-width: 500px;
+  height: 50%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  color: white;
+  font-size: 1rem;
+}
+
+.close-btn {
+  color: white;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.payment-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background: transparent;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.payment-button:hover {
+  background: rgba(255, 255, 255, 0.001);
+}
+
+.payment-icon {
+  height: 2.8rem;
+}
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  z-index: 100;
+}
+
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-scale-enter-to,
+.fade-scale-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+</style>

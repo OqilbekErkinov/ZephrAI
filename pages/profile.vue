@@ -52,6 +52,7 @@
                         </svg>
                     </div>
                 </div>
+            <transition name="expand">
                 <div v-if="showSettings" class="dropdown">
                     <div class="dropdown-subtitle" @click="toggleAvatarDropdown"
                         :class="{ 'subtitle-greyed': showAvatarDropdown }">
@@ -67,6 +68,7 @@
                             </svg>
                         </span>
                     </div>
+                    <transition name="expand">
                     <div v-if="showAvatarDropdown" class="dropdown-list">
                         <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
                             @click="selectedAvatar = avatar" :class="{
@@ -91,6 +93,7 @@
                             </svg>
                         </div>
                     </div>
+                </transition>
                     <div class="dropdown-subtitle" @click="toggleAspectDropdown"
                         :class="{ 'subtitle-greyed': showAspectDropdown }">
                         Соотношение сторон
@@ -105,6 +108,7 @@
                             </svg>
                         </span>
                     </div>
+                    <transition name="expand">
                     <div v-if="showAspectDropdown" class="dropdown-list">
                         <div v-for="(option, index) in aspectRatios" :key="index" class="dropdown-item"
                             @click="selectedAspect = option" :class="{
@@ -122,7 +126,9 @@
                             </span>
                         </div>
                     </div>
+                </transition>
                 </div>
+            </transition>
             </div>
 
             <!-- Social Networks (hidden when any dropdown is open) -->
@@ -135,7 +141,6 @@
                 </div>
                 <SocialNetworkModal :visible="showSocialNetworkModal" @close="showSocialNetworkModal = false" />
             </div>
-
             <!-- Buy Photos Section -->
             <div v-if="!showSettings">
                 <div class="menu-item" @click="toggleTariffDropdown">
@@ -146,6 +151,7 @@
                         </svg>
                     </div>
                 </div>
+                <transition name="expand">
                 <div v-if="showTariffDropdown" class="tariff-dropdown">
                     <div class="dropdown-header-with-close">
                         <p class="dropdown-header">Выберите один из подходящих тарифов</p>
@@ -162,6 +168,7 @@
                         {{ amount }} фото
                     </div>
                 </div>
+            </transition>
             </div>
             <PaymentModal :visible="showPaymentModal" @close="showPaymentModal = false" />
 
@@ -382,7 +389,6 @@ const selectPackage = (amount) => {
 }
 
 .menu-arrow {
-    color: #888;
     font-size: 18px;
 }
 
@@ -510,4 +516,29 @@ const selectPackage = (amount) => {
 .close-icon:hover {
     color: #fff;
 }
+
+
+.expand-enter-active {
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.expand-leave-active {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.expand-enter-from,
+.expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.expand-enter-to,
+.expand-leave-from {
+  max-height: 1000px; /* adjust based on expected content height */
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>

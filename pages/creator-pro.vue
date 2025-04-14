@@ -268,17 +268,22 @@ const parseMessage = (text) => {
     position: relative;
     width: 90%;
     border-radius: 15px;
-    margin: 0 auto;
+    margin: auto;
+    /* margin-top: -7rem; */
+    /* margin-bottom: 13rem; */
 }
 
 .text-bg {
-    position: fixed;
-    width: 82%;
-    background: rgba(42, 42, 42, 0.87);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     border-radius: 15px;
     z-index: 0;
     padding: 15px;
-    margin: auto;
 }
 
 .text-fon p {
