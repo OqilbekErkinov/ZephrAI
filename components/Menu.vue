@@ -70,7 +70,7 @@
 }
 
 .menu-back {
-    background: url('/images/menushadow.png') no-repeat center;
+    background: url('/images/buyangisi.png') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 13.5%;
