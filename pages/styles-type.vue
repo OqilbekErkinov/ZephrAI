@@ -94,14 +94,16 @@ const types = [
 
 .type-title {
   color: white;
-  font-size: 10px;
-  padding: 2px 0.2rem;
+  font-size: 14px;
+  padding: 5px 0.2rem;
   position: absolute;
-  background: rgba(25, 25, 25, 0.8);
+  background: rgba(25, 25, 25, 0.65);
+  backdrop-filter: blur(10px);
   width: 45%;
-  margin-top: -1.1rem;
+  margin-top: -1.87rem;
   text-align: center;
   border-radius: 0 0 10px 10px;
+  overflow: hidden;
 }
 
 .type-back h4 {

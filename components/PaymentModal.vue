@@ -19,10 +19,10 @@
   const emit = defineEmits(['close'])
   
   const methods = [
-    { name: 'Click', icon: '/images/pay-click.png', link: '/premium' },
-    { name: 'Payme', icon: '/images/pay-payme.png', link: 'https://payme.uz/pay' },
-    { name: 'Visa', icon: '/images/pay-visa.png', link: '/creator-pro' },
-    { name: 'YooKassa', icon: '/images/pay-yookassa.png', link: '/gallery-pro' },
+    { name: 'Click', icon: '/images/payclick.png', link: '/premium' },
+    { name: 'Payme', icon: '/images/paypay.png', link: 'https://payme.uz/pay' },
+    { name: 'Visa', icon: '/images/payvis.png', link: '/creator-pro' },
+    { name: 'YooKassa', icon: '/images/payyuk.png', link: '/gallery-pro' },
   ]
   
   const closeModal = () => {
@@ -50,22 +50,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
     z-index: 50;
     overflow-y: auto;
   }
   
   .modal-content {
-    background-color: black;
+    background-color: #131313;
     border-radius: 1rem 1rem 0 0;
     padding: 16px;
     width: 100%;
     max-width: 500px;
-    height: 60%;
+    height: 50%;
   }
   
   .modal-header {
@@ -112,7 +112,7 @@
   }
   
   .payment-icon {
-    height: 1.7rem;
+    height: 2.8rem;
   }
   
   .fixed-footer {

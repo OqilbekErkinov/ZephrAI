@@ -1,6 +1,6 @@
 <template>
     <div class="style-wrapper">
-        <h1 class="style-heading"><span class="highlight">Выбирайте</span><br>готовый стиль</h1>
+        <h1 class="style-heading"><span class="highlight">Выбирайте</span><br><span style="font-family: Futura PT, sans-serif">готовый стиль</span></h1>
         <div class="style-grid">
             <div class="style-card" v-for="(style, i) in styles" :key="i">
                 <img :src="style.img" :alt="style.title" class="style-img" />

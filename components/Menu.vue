@@ -1,22 +1,14 @@
 <template>
     <div class="menu-back container" style="padding: 0 !important; margin: 0">
-    <div class="menu container">
-        <div classs="menu-back2">
-            <NuxtLink to="/" class="me-2" style="margin-left: -0.6rem;" :class="{ 'active': $route.path === '/' }">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_193_6)">
-                        <path
-                            d="M31.7146 19.9785C31.7146 20.752 31.078 21.3578 30.3566 21.3578H28.9985L29.0282 28.2414C29.0282 28.3574 29.0197 28.4734 29.007 28.5895V29.2855C29.007 30.2352 28.2474 31.0043 27.3095 31.0043H26.6305C26.5838 31.0043 26.5371 31.0043 26.4904 31C26.431 31.0043 26.3716 31.0043 26.3122 31.0043L24.9329 31H23.9144C22.9765 31 22.2169 30.2309 22.2169 29.2813V28.25V25.5C22.2169 24.7395 21.61 24.125 20.8589 24.125H18.1428C17.3917 24.125 16.7848 24.7395 16.7848 25.5V28.25V29.2813C16.7848 30.2309 16.0252 31 15.0873 31H14.0687H12.715C12.6513 31 12.5877 30.9957 12.524 30.9914C12.4731 30.9957 12.4221 31 12.3712 31H11.6922C10.7543 31 9.99467 30.2309 9.99467 29.2813V24.4688C9.99467 24.4301 9.99467 24.3871 9.99892 24.3484V21.3535H8.64089C7.877 21.3535 7.28287 20.752 7.28287 19.9742C7.28287 19.5875 7.41018 19.2438 7.70725 18.943L18.5842 9.34375C18.8812 9.04297 19.2208 9 19.5178 9C19.8149 9 20.1544 9.08594 20.409 9.30078L31.2478 18.9473C31.5873 19.248 31.757 19.5918 31.7146 19.9785Z"
-                            :fill="$route.path === '/' ? '#F0A8E1' : '#525252'" />
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_193_6">
-                            <rect width="24.4444" height="22" fill="white" transform="translate(7.27778 9)" />
-                        </clipPath>
-                    </defs>
+        <div class="menu container">
+            <NuxtLink to="/" class="" style="" :class="{ 'active': $route.path === '/' }">
+                <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24.7144 10.9785C24.7144 11.752 24.0779 12.3578 23.3564 12.3578H21.9984L22.0281 19.2414C22.0281 19.3574 22.0196 19.4734 22.0069 19.5895V20.2855C22.0069 21.2352 21.2472 22.0043 20.3093 22.0043H19.6303C19.5836 22.0043 19.537 22.0043 19.4903 22C19.4309 22.0043 19.3714 22.0043 19.312 22.0043L17.9328 22H16.9143C15.9764 22 15.2167 21.2309 15.2167 20.2813V19.25V16.5C15.2167 15.7395 14.6099 15.125 13.8587 15.125H11.1427C10.3915 15.125 9.78464 15.7395 9.78464 16.5V19.25V20.2813C9.78464 21.2309 9.025 22 8.08711 22H7.06859H5.71481C5.65116 22 5.5875 21.9957 5.52384 21.9914C5.47292 21.9957 5.42199 22 5.37106 22H4.69205C3.75417 22 2.99452 21.2309 2.99452 20.2813V15.4688C2.99452 15.4301 2.99452 15.3871 2.99876 15.3484V12.3535H1.64074C0.87685 12.3535 0.282715 11.752 0.282715 10.9742C0.282715 10.5875 0.41003 10.2438 0.707098 9.94297L11.584 0.34375C11.8811 0.0429688 12.2206 0 12.5177 0C12.8147 0 13.1542 0.0859375 13.4089 0.300781L24.2476 9.94727C24.5871 10.248 24.7569 10.5918 24.7144 10.9785Z"
+                        :fill="$route.path === '/' ? '#F0A8E1' : '#525252'" />
                 </svg>
             </NuxtLink>
-            <NuxtLink to="/gallery" style="margin-right: -0.5rem;" :class="{ 'active': $route.path === '/gallery' }">
+            <NuxtLink to="/gallery" style="" :class="{ 'active': $route.path === '/gallery' }">
                 <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_17)">
                         <path
@@ -31,10 +23,10 @@
                 </svg>
             </NuxtLink>
             <NuxtLink to="/styles" :class="{ 'active': $route.path === '/styles' }">
-                <img style="margin-top: -1.2rem;" :src="$route.path === '/styles' ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
+                <img style="margin-top: -1.2rem; width: 40px;"
+                    :src="$route.path === '/styles' ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
             </NuxtLink>
-            <NuxtLink to="/creator" class="me-3" style="margin-left: -0.6rem;"
-                :class="{ 'active': $route.path === '/creator' }">
+            <NuxtLink to="/creator" class="" style="" :class="{ 'active': $route.path === '/creator' }">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.9375 21.1406L8.92891 21.1492L8.70977 21.3125L7.975 21.8625C7.76875 22.0172 7.48945 22.043 7.25313 21.927C7.0168 21.8109 6.875 21.5746 6.875 21.3125V20.3973V20.1223V20.1094V19.9375V17.875H4.8125H2.75C1.2332 17.875 0 16.6418 0 15.125V2.75C0 1.2332 1.2332 0 2.75 0H19.25C20.7668 0 22 1.2332 22 2.75V15.125C22 16.6418 20.7668 17.875 19.25 17.875H13.2902L8.9375 21.1406ZM5 11C6.10457 11 7 10.1046 7 9C7 7.89543 6.10457 7 5 7C3.89543 7 3 7.89543 3 9C3 10.1046 3.89543 11 5 11ZM13 9C13 10.1046 12.1046 11 11 11C9.89543 11 9 10.1046 9 9C9 7.89543 9.89543 7 11 7C12.1046 7 13 7.89543 13 9ZM17 11C18.1046 11 19 10.1046 19 9C19 7.89543 18.1046 7 17 7C15.8954 7 15 7.89543 15 9C15 10.1046 15.8954 11 17 11Z"
@@ -57,7 +49,6 @@
             </NuxtLink>
         </div>
     </div>
-</div>
 </template>
 <style scoped>
 .menu {
@@ -66,8 +57,8 @@
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
     background: #2A2A2A;
     box-shadow: 0 0 8px rgba(240, 168, 225, 0.5);
     /* background: url('/images/backmenu.svg') no-repeat center;  */
@@ -79,8 +70,9 @@
     z-index: 4100;
 
 }
+
 .menu-back {
-    background: url('/images/menushadow.png') no-repeat center; 
+    background: url('/images/menushadow.png') no-repeat center;
     background-size: cover;
     width: 100%;
     height: 13.5%;
@@ -92,5 +84,12 @@
     justify-content: center;
     align-items: center;
     z-index: 4150;
+}
+
+.menu-backkk {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+
 }
 </style>

@@ -2,7 +2,12 @@
     <div v-if="visible" class="modal-overlay">
         <div class="modal-content">
             <div class="modal-header">
-                <button @click="closeModal" class="close-btn">&times;</button>
+                <button @click="closeModal" class="close-btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L13 13M13 1L1 13" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
             </div>
             <div class="modal-body">
                 <a href="https://instagram.com/king_006x" target="_blank" class="modal-item">
@@ -44,22 +49,22 @@ watch(() => props.visible, (newVisible) => {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
     z-index: 50;
     overflow-y: auto;
 }
 
 .modal-content {
-    background-color: black;
+    background-color: #131313;
     border-radius: 1rem 1rem 0 0;
-    padding: 35px 16px 16px 16px;
+    padding: 26px 16px 16px 16px;
     width: 100%;
     max-width: 500px;
-    height: 60%;
+    height: 50%;
 }
 
 .modal-header {
@@ -97,6 +102,7 @@ watch(() => props.visible, (newVisible) => {
     background: transparent;
     border: none;
     cursor: pointer;
+    margin-top: -1rem;
 }
 
 .pereyti-btn {

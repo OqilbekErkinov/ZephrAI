@@ -46,7 +46,7 @@
       но студийные фотографии могут
       дать еще более крутой эффект!
     </p>
-    <p class="sub-text2">Важно<span class="text-danger">!</span> <br>
+    <p class="sub-text2"><span style="font-weight: bold;">Важно</span><span class="text-danger">!</span> <br>
       Используйте разные ракурсы, выражения лиц, освещение и фоны используйте крупный план, лицо должно быть хорошо
       видно, это придаст нейрофотографиям максимально естественный эффект.
     </p>
@@ -87,7 +87,6 @@
   color: white;
   max-width: 450px;
   margin: 0 auto;
-  font-family: sans-serif;
   padding: 1rem;
   padding-bottom: 2rem;
 }
@@ -114,7 +113,7 @@
 }
 
 .sub-title {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 550;
   color: #fff;
   text-align: left;
@@ -123,8 +122,7 @@
 }
 
 .sub-text {
-  color: #ccc;
-  font-size: 15px;
+  font-size: 24px;
   text-align: left;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
@@ -132,8 +130,7 @@
 }
 
 .sub-text2 {
-  color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   text-align: left;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
@@ -150,4 +147,8 @@
   border-radius: 10px;
   cursor: pointer;
 }
+.text-light {
+  font-weight: bold;
+}
+
 </style>

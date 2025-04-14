@@ -1,7 +1,7 @@
 <template>
     <div class="container about-page">
       <div class="content-wrapper">
-        <img class="about-image" src="/images/gallery-back.png" alt="Textpic">
+        <img class="about-image" src="/images/gallery-back2.png" alt="Textpic">
         <NuxtLink to="/styles">
           <button class="about-button">Premium</button>
         </NuxtLink>

@@ -24,6 +24,11 @@ body {
   background-color: #131313;
   padding-bottom: 100px;
 }
+button {
+  font-family: 'Gropled', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+}
 .container {
     max-width: 450px;
     padding: 14px !important;
@@ -68,12 +73,12 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
-  .image-card:hover img {
+  /* .image-card:hover img {
     transform: scale(1.05);
-  }
+  } */
   .image-grid.small {
     justify-content: space-between;
-    background: #222222;
+    background: #222222; 
     padding: 8px;
     border-radius: 10px;
   }
@@ -206,7 +211,7 @@ body {
   }
 .large-1 {
   background: #222222;
-  border-radius: 25px;
+  border-radius: 30px;
   padding: 10px!important;
   margin-left: -3.5rem;
   margin-right: rem;

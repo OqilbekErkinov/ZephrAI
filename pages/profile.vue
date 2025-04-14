@@ -12,12 +12,15 @@
         <div class="premium-card">
             <NuxtLink to="/" class="premium-name">Zephyr<span style="color: #F0A8E1;">AI</span></NuxtLink>
             <NuxtLink to="/styles" class="premium-link">
-                Премиум <br> подписка <span>›</span>
+                Премиум <br> подписка <span>
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="#F0A8E1" stroke-linecap="round" />
+                    </svg>
+                </span>
             </NuxtLink>
         </div>
 
         <div class="menu-items">
-            <!-- Balance Item (always visible) -->
             <div class="menu-item">
                 <div class="balance-label">Баланс</div>
                 <div class="balance-value">
@@ -37,38 +40,86 @@
             <div v-if="!showTariffDropdown">
                 <div class="menu-item" @click="toggleSettings">
                     <div class="menu-text" :class="{ 'subtitle-greyed': showSettings }">Настройки</div>
-                    <div class="menu-arrow">{{ showSettings ? '✕' : '›' }}</div>
+                    <div class="menu-arrow">
+                        <svg v-if="showSettings" width="14" height="15" viewBox="0 0 14 15" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1.69873L13 13.7669M13 1.69873L1 13.7669" stroke="white" stroke-width="1.5"
+                                stroke-linecap="round" />
+                        </svg>
+                        <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                        </svg>
+                    </div>
                 </div>
                 <div v-if="showSettings" class="dropdown">
                     <div class="dropdown-subtitle" @click="toggleAvatarDropdown"
                         :class="{ 'subtitle-greyed': showAvatarDropdown }">
                         Выбор аватара
-                        <span class="menu-arrow">{{ showAvatarDropdown ? '˄' : '›' }}</span>
+                        <span class="menu-arrow">
+                            <svg v-if="showAvatarDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
+                            </svg>
+                            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                            </svg>
+                        </span>
                     </div>
                     <div v-if="showAvatarDropdown" class="dropdown-list">
                         <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
                             @click="selectedAvatar = avatar" :class="{
-                            'active-avatar': selectedAvatar === avatar,
-                            'greyed': isDropdownOpen || selectedAvatar !== avatar
-                        }">
+                        'active-avatar': selectedAvatar === avatar,
+                        'greyed': isDropdownOpen || selectedAvatar !== avatar
+                    }">
                             {{ avatar }}
-                            <span v-if="selectedAvatar === avatar" class="checkmark">✔</span>
+                            <span v-if="selectedAvatar === avatar" class="checkmark">
+                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
+                                        fill="#23C72D" />
+                                </svg>
+                            </span>
                         </div>
-                        <div class="dropdown-item add-new" @click="addNewAvatar">➕ Добавить новый аватар</div>
+                        <div class="dropdown-ite add-new" @click="addNewAvatar">Добавить новый аватар
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.70459 6.61523H12M6.35231 1.23046V12" stroke="#F0A8E1"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
                     </div>
                     <div class="dropdown-subtitle" @click="toggleAspectDropdown"
                         :class="{ 'subtitle-greyed': showAspectDropdown }">
                         Соотношение сторон
-                        <span class="menu-arrow">{{ showAspectDropdown ? '˄' : '›' }}</span>
+                        <span class="menu-arrow">
+                            <svg v-if="showAspectDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
+                            </svg>
+                            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                            </svg>
+                        </span>
                     </div>
                     <div v-if="showAspectDropdown" class="dropdown-list">
                         <div v-for="(option, index) in aspectRatios" :key="index" class="dropdown-item"
                             @click="selectedAspect = option" :class="{
-                            'active-avatar': selectedAspect === option,
-                            'greyed': isDropdownOpen || selectedAspect !== option
-                        }">
+                        'active-avatar': selectedAspect === option,
+                        'greyed': isDropdownOpen || selectedAspect !== option
+                    }">
                             {{ option }}
-                            <span v-if="selectedAspect === option" class="checkmark">✔</span>
+                            <span v-if="selectedAspect === option" class="checkmark">
+                                <svg width="15" height="14" viewBox="0 0 11 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
+                                        fill="#23C72D" />
+                                </svg>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -77,20 +128,34 @@
             <!-- Social Networks (hidden when any dropdown is open) -->
             <div class="menu-item" v-if="!showSettings && !showTariffDropdown">
                 <div @click="showSocialNetworkModal = true" class="menu-text">Соцсети</div>
-                <div class="menu-arrow">›</div>
+                <div class="menu-arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
                 <SocialNetworkModal :visible="showSocialNetworkModal" @close="showSocialNetworkModal = false" />
             </div>
 
             <!-- Buy Photos Section -->
             <div v-if="!showSettings">
                 <div class="menu-item" @click="toggleTariffDropdown">
-                    <div class="menu-text">Купить фото</div>
-                    <div class="menu-arrow">›</div>
+                    <div class="menu-text" :class="{ 'subtitle-greyed': showTariffDropdown }">Купить фото</div>
+                    <div class="menu-arrow">
+                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                        </svg>
+                    </div>
                 </div>
                 <div v-if="showTariffDropdown" class="tariff-dropdown">
                     <div class="dropdown-header-with-close">
                         <p class="dropdown-header">Выберите один из подходящих тарифов</p>
-                        <span class="close-icon" @click="showTariffDropdown = false">✕</span>
+                        <span class="close-icon" @click="showTariffDropdown = false">
+                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.69873L13 13.7669M13 1.69873L1 13.7669" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </span>
                     </div>
                     <div v-for="amount in [25, 50, 100, 200]" :key="amount" class="tariff-btn"
                         @click="selectPackage(amount)">
@@ -105,7 +170,11 @@
                 <a @click="showCareServiceModal = true" target="_blank" class="menu-text">
                     Служба заботы
                 </a>
-                <div class="menu-arrow">›</div>
+                <div class="menu-arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
                 <CareServiceModal :visible="showCareServiceModal" @close="showCareServiceModal = false" />
             </div>
         </div>
@@ -184,7 +253,6 @@ const selectPackage = (amount) => {
 
 <style scoped>
 .container {
-    font-family: Arial, sans-serif;
     background-color: #131313;
     color: white;
     min-height: 100vh;
@@ -204,7 +272,7 @@ const selectPackage = (amount) => {
 .profile-photo {
     display: flex;
     justify-content: center;
-    margin: 30px 0;
+    margin-bottom: -1.4rem;
 }
 
 .photo-container {
@@ -270,13 +338,13 @@ const selectPackage = (amount) => {
 .balance-label {
     font-size: 16px;
     flex-grow: 1;
-    margin: 1rem 0;
+    padding: 5px 0 17px 0; 
 }
 
 .balance-value {
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    padding: 5px 0 17px 0; 
 }
 
 .credit-label {
@@ -357,7 +425,7 @@ const selectPackage = (amount) => {
 
 .add-new {
     color: #F0A8E1;
-    font-style: italic;
+    margin-left: 12px;
 }
 
 .dropdown-subtitle {

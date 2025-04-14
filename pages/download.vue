@@ -199,7 +199,7 @@ export default {
 .image-preview {
     position: relative;
     width: 100%;
-    height: 90px;
+    height: 110px;
     overflow: hidden;
     border-radius: 10px;
     flex-shrink: 0;
