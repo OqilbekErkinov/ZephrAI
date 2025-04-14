@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="gradient-overlay top">
-      <img src="/images/menushadow2.png" alt="">
+      <img src="/images/shadow2.png" alt="">
     </div>
   </div>
 </template>
@@ -99,7 +99,7 @@ const types = [
   position: absolute;
   background: rgba(25, 25, 25, 0.65);
   backdrop-filter: blur(10px);
-  width: 45%;
+  width: 44%;
   margin-top: -1.87rem;
   text-align: center;
   border-radius: 0 0 10px 10px;
