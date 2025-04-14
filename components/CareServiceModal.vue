@@ -35,7 +35,6 @@ const closeModal = () => {
 watch(() => props.visible, (newVisible) => {
     if (newVisible) {
         document.body.style.overflow = 'hidden';
-        // window.scrollTo(0, 0);
     } else {
         document.body.style.overflow = 'auto';
     }
@@ -88,11 +87,12 @@ watch(() => props.visible, (newVisible) => {
 
 .close-btn {
     color: white;
-    font-size: 2rem;
     font-weight: regular;
     background: transparent;
     border: none;
     cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .pereyti-btn {

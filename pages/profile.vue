@@ -52,83 +52,83 @@
                         </svg>
                     </div>
                 </div>
-            <transition name="expand">
-                <div v-if="showSettings" class="dropdown">
-                    <div class="dropdown-subtitle" @click="toggleAvatarDropdown"
-                        :class="{ 'subtitle-greyed': showAvatarDropdown }">
-                        Выбор аватара
-                        <span class="menu-arrow">
-                            <svg v-if="showAvatarDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
-                            </svg>
-                            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
-                            </svg>
-                        </span>
-                    </div>
-                    <transition name="expand">
-                    <div v-if="showAvatarDropdown" class="dropdown-list">
-                        <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
-                            @click="selectedAvatar = avatar" :class="{
+                <transition name="expand">
+                    <div v-if="showSettings" class="dropdown">
+                        <div class="dropdown-subtitle" @click="toggleAvatarDropdown"
+                            :class="{ 'subtitle-greyed': showAvatarDropdown }">
+                            Выбор аватара
+                            <span class="menu-arrow">
+                                <svg v-if="showAvatarDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
+                                </svg>
+                                <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <transition name="expand">
+                            <div v-if="showAvatarDropdown" class="dropdown-list">
+                                <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
+                                    @click="selectedAvatar = avatar" :class="{
                         'active-avatar': selectedAvatar === avatar,
                         'greyed': isDropdownOpen || selectedAvatar !== avatar
                     }">
-                            {{ avatar }}
-                            <span v-if="selectedAvatar === avatar" class="checkmark">
-                                <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                    {{ avatar }}
+                                    <span v-if="selectedAvatar === avatar" class="checkmark">
+                                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
+                                                fill="#23C72D" />
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="dropdown-ite add-new" @click="addNewAvatar">Добавить новый аватар
+                                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.70459 6.61523H12M6.35231 1.23046V12" stroke="#F0A8E1"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </transition>
+                        <div class="dropdown-subtitle" @click="toggleAspectDropdown"
+                            :class="{ 'subtitle-greyed': showAspectDropdown }">
+                            Соотношение сторон
+                            <span class="menu-arrow">
+                                <svg v-if="showAspectDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
-                                        fill="#23C72D" />
+                                    <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
+                                </svg>
+                                <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
                                 </svg>
                             </span>
                         </div>
-                        <div class="dropdown-ite add-new" @click="addNewAvatar">Добавить новый аватар
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.70459 6.61523H12M6.35231 1.23046V12" stroke="#F0A8E1"
-                                    stroke-linecap="round" />
-                            </svg>
-                        </div>
-                    </div>
-                </transition>
-                    <div class="dropdown-subtitle" @click="toggleAspectDropdown"
-                        :class="{ 'subtitle-greyed': showAspectDropdown }">
-                        Соотношение сторон
-                        <span class="menu-arrow">
-                            <svg v-if="showAspectDropdown" width="14" height="8" viewBox="0 0 14 8" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
-                            </svg>
-                            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
-                            </svg>
-                        </span>
-                    </div>
-                    <transition name="expand">
-                    <div v-if="showAspectDropdown" class="dropdown-list">
-                        <div v-for="(option, index) in aspectRatios" :key="index" class="dropdown-item"
-                            @click="selectedAspect = option" :class="{
+                        <transition name="expand">
+                            <div v-if="showAspectDropdown" class="dropdown-list">
+                                <div v-for="(option, index) in aspectRatios" :key="index" class="dropdown-item"
+                                    @click="selectedAspect = option" :class="{
                         'active-avatar': selectedAspect === option,
                         'greyed': isDropdownOpen || selectedAspect !== option
                     }">
-                            {{ option }}
-                            <span v-if="selectedAspect === option" class="checkmark">
-                                <svg width="15" height="14" viewBox="0 0 11 10" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
-                                        fill="#23C72D" />
-                                </svg>
-                            </span>
-                        </div>
+                                    {{ option }}
+                                    <span v-if="selectedAspect === option" class="checkmark">
+                                        <svg width="15" height="14" viewBox="0 0 11 10" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M4.5 9.5L0.812525 5.07503C0.291314 4.44958 0.736072 3.5 1.55023 3.5C1.83522 3.5 2.10549 3.62659 2.28794 3.84552L4.5 6.5L9.21206 0.845522C9.39451 0.626587 9.66478 0.5 9.94977 0.5C10.7639 0.5 11.2087 1.44958 10.6875 2.07503L4.5 9.5Z"
+                                                fill="#23C72D" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </transition>
                     </div>
                 </transition>
-                </div>
-            </transition>
             </div>
 
             <!-- Social Networks (hidden when any dropdown is open) -->
@@ -141,8 +141,7 @@
                 </div>
                 <SocialNetworkModal :visible="showSocialNetworkModal" @close="showSocialNetworkModal = false" />
             </div>
-            <!-- Buy Photos Section -->
-            <div v-if="!showSettings">
+            <div v-if="!showTariffDropdown">
                 <div class="menu-item" @click="toggleTariffDropdown">
                     <div class="menu-text" :class="{ 'subtitle-greyed': showTariffDropdown }">Купить фото</div>
                     <div class="menu-arrow">
@@ -151,7 +150,9 @@
                         </svg>
                     </div>
                 </div>
-                <transition name="expand">
+            </div>
+
+            <transition name="expand">
                 <div v-if="showTariffDropdown" class="tariff-dropdown">
                     <div class="dropdown-header-with-close">
                         <p class="dropdown-header">Выберите один из подходящих тарифов</p>
@@ -169,7 +170,7 @@
                     </div>
                 </div>
             </transition>
-            </div>
+
             <PaymentModal :visible="showPaymentModal" @close="showPaymentModal = false" />
 
             <!-- Care Service (hidden when any dropdown is open) -->
@@ -253,7 +254,6 @@ const toggleTariffDropdown = () => {
 
 const selectPackage = (amount) => {
     selectedPhotoPackage.value = amount
-    showTariffDropdown.value = false
     showPaymentModal.value = true
 }
 </script>
@@ -345,13 +345,13 @@ const selectPackage = (amount) => {
 .balance-label {
     font-size: 16px;
     flex-grow: 1;
-    padding: 5px 0 17px 0; 
+    padding: 5px 0 17px 0;
 }
 
 .balance-value {
     display: flex;
     align-items: center;
-    padding: 5px 0 17px 0; 
+    padding: 5px 0 17px 0;
 }
 
 .credit-label {
@@ -435,7 +435,7 @@ const selectPackage = (amount) => {
 }
 
 .dropdown-subtitle {
-    padding: 8px 12px;
+    padding: 10px 12px;
     cursor: pointer;
     transition: color 0.2s ease;
     color: #ffffff;
@@ -519,26 +519,27 @@ const selectPackage = (amount) => {
 
 
 .expand-enter-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
+    transition: all 0.8s ease;
+    overflow: hidden;
 }
+
 .expand-leave-active {
-  transition: all 0.3s ease;
-  overflow: hidden;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .expand-enter-from,
 .expand-leave-to {
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-10px);
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
 .expand-enter-to,
 .expand-leave-from {
-  max-height: 1000px; /* adjust based on expected content height */
-  opacity: 1;
-  transform: translateY(0);
+    max-height: 1000px;
+    /* adjust based on expected content height */
+    opacity: 1;
+    transform: translateY(0);
 }
-
 </style>

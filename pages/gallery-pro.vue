@@ -25,13 +25,13 @@
                 </div>
                 <button class="nav-button prev-button" @click.stop="showPreviousImage">
                     <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round"
+                        <path d="M15 18L9 12L15 6" stroke="#969696" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                 </button>
                 <button class="nav-button next-button" @click.stop="showNextImage">
                     <svg class="ms-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18" stroke="white" stroke-width="2" stroke-linecap="round"
+                        <path d="M9 6L15 12L9 18" stroke="#969696" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                 </button>
@@ -92,24 +92,13 @@
                 <!-- Social media buttons -->
                 <div class="social-buttons">
                     <button class="social-btn instagram" @click="shareToSocial('instagram')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" />
-                            <circle cx="12" cy="12" r="5" stroke="white" stroke-width="2" />
-                            <circle cx="18" cy="6" r="1" fill="white" />
-                        </svg>
+                        <img src="/images/icon-instagram.png" class="icon" />
                     </button>
                     <button class="social-btn telegram" @click="shareToSocial('telegram')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22 3L2 10L10 12L17 7L12 14L14 22L22 3Z" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="/images/icon-telegram.png" class="icon" />
                     </button>
                     <button class="social-btn facebook" @click="shareToSocial('facebook')">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z"
-                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <img src="/images/icon-facebook.png" class="icon" />
                     </button>
                 </div>
             </div>
@@ -224,7 +213,7 @@ function shareToSocial(platform) {
 
 <style scoped>
 .container {
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
     padding: 0;
 }
@@ -341,7 +330,8 @@ function shareToSocial(platform) {
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
-    background: rgba(78, 78, 78, 0.322);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: #969696;
     width: 35px;
     height: 35px;
@@ -384,8 +374,8 @@ function shareToSocial(platform) {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     z-index: 1050;
     display: flex;
     justify-content: center;
@@ -417,7 +407,8 @@ function shareToSocial(platform) {
 
 .close-button {
     background: none;
-    border: none;
+    border: 1px solid white;
+    border-radius: 50%;
     cursor: pointer;
     padding: 5px;
     display: flex;
@@ -455,7 +446,7 @@ function shareToSocial(platform) {
 .slide-content {
     position: relative;
     width: 100%;
-    height: 380px;
+    /* height: 380px; */
     border-radius: 15px;
     overflow: hidden;
 }
@@ -496,7 +487,8 @@ function shareToSocial(platform) {
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
-    background: rgba(78, 78, 78, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: #969696;
     width: 35px;
     height: 35px;
@@ -532,25 +524,14 @@ function shareToSocial(platform) {
 }
 
 .social-btn {
-    width: 50px;
+     width: 50px;
     height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    cursor: pointer;
-}
-
-.social-btn.instagram {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-}
-
-.social-btn.telegram {
-    background: #0088cc;
-}
-
-.social-btn.facebook {
-    background: #3b5998;
+    cursor: pointer; 
+    background: transparent;
 }
 </style>

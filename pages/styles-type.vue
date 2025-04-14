@@ -7,17 +7,18 @@
         <p class="cancel" @click="goBack">✕</p>
       </div>
       <div class="type-grid">
-        <div class="type-card" v-for="(type, i) in types" :key="i">
-          <img :src="type.img" :alt="type.title" class="type-img" />
-          <NuxtLink :to="{ path: '/styles-pro', query: { type: type.title } }">
-            <p class="type-title">{{ type.title }}</p>
-          </NuxtLink>
-        </div>
+        <div class="type-card" v-for="(type, i) in types" :key="i" :style="{ backgroundImage: `url(${type.img})` }">
+
+        <!-- <img :src="type.img" :alt="type.title" class="type-img" /> -->
+        <NuxtLink :to="{ path: '/styles-pro', query: { type: type.title } }">
+          <p class="type-title">{{ type.title }}</p>
+        </NuxtLink>
       </div>
     </div>
-    <div class="gradient-overlay top">
-      <img src="/images/shadow2.png" alt="">
-    </div>
+  </div>
+  <div class="gradient-overlay top">
+    <img src="/images/shadow2.png" alt="">
+  </div>
   </div>
 </template>
 
@@ -79,10 +80,15 @@ const types = [
 }
 
 .type-card {
-  background: rgba(25, 25, 25, 0.8);
+  /* background: rgba(25, 25, 25, 0.8); */
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
+  height: 180px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .type-img {
@@ -96,14 +102,15 @@ const types = [
   color: white;
   font-size: 14px;
   padding: 5px 0.2rem;
-  position: absolute;
+  /* position: absolute; */
   background: rgba(25, 25, 25, 0.65);
   backdrop-filter: blur(10px);
-  width: 44%;
-  margin-top: -1.87rem;
+  width: 100%;
+  margin-top: auto;
   text-align: center;
-  border-radius: 0 0 10px 10px;
+  border-radius: none;
   overflow: hidden;
+  margin: 0;
 }
 
 .type-back h4 {
@@ -118,17 +125,18 @@ const types = [
 }
 
 .gradient-overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 60px;
-    z-index: 4050;
-    pointer-events: none;
-    width: 100%;
-    color: #070707 !important;
-    background-color: #070707 !important;
-  }
-  .gradient-overlay.top {
-    background: linear-gradient(to bottom, rgba(7, 7, 7, 1), transparent);
-  }
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 4050;
+  pointer-events: none;
+  width: 100%;
+  color: #070707 !important;
+  background-color: #070707 !important;
+}
+
+.gradient-overlay.top {
+  background: linear-gradient(to bottom, rgba(7, 7, 7, 1), transparent);
+}
 </style>
