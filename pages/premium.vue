@@ -1,7 +1,7 @@
 <template>
   <div class="promo-wrapper conatiner">
     <div class="image-galleryy">
-      <!-- <img v-for="(img, i) in images" :key="i" :src="img" alt="photo" class="gallery-img" /> -->
+      <!-- <img v-for="(img, i) in images" :key="i" :src="img" alt="photo" class="gallery-img" />
       <img src='/images/premium1.png' alt="premium" class="gallery-img">
       <img src='/images/premium2.png' alt="premium" class="gallery-img">
       <div class="premiumtexttt">Совместное
@@ -37,7 +37,10 @@
             d="M4 9L0.312525 4.57503C-0.208686 3.94958 0.236072 3 1.05023 3C1.33522 3 1.60549 3.12659 1.78794 3.34552L4 6L8.71206 0.345522C8.89451 0.126587 9.16478 0 9.44977 0C10.2639 0 10.7087 0.949578 10.1875 1.57503L4 9Z"
             fill="#23C72D" />
         </svg>
-      </div>
+      </div> -->
+
+      <img src='/images/premium.png' alt="premium" class="gallery-img">
+
     </div>
     <h1 class="maintitle">Спасибо за покупку!</h1>
     <h3 class="sub-title">Теперь нужно добавить 10 ваших фотографи чтобы обучить модель</h3>
@@ -87,7 +90,7 @@
   color: white;
   max-width: 450px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 14px;
   padding-bottom: 2rem;
 }
 
@@ -100,7 +103,7 @@
 }
 
 .gallery-img {
-  width: 50%;
+  width: 100%;
   object-fit: cover;
 }
 
