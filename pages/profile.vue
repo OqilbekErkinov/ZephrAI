@@ -39,7 +39,15 @@
             <!-- Settings Section -->
             <div v-if="!showTariffDropdown">
                 <div class="menu-item" @click="toggleSettings">
-                    <div class="menu-text" :class="{ 'subtitle-greyed': showSettings }">Настройки</div>
+                    <div class="menu-text" :class="{ 'subtitle-greyed': showSettings }">
+                        <svg class="me-2" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.9501 6.18363C18.0695 6.50654 17.9688 6.86658 17.7114 7.0967L16.0963 8.55909C16.1373 8.86716 16.1597 9.18265 16.1597 9.50186C16.1597 9.82106 16.1373 10.1365 16.0963 10.4446L17.7114 11.907C17.9688 12.1371 18.0695 12.4972 17.9501 12.8201C17.786 13.2618 17.5883 13.6849 17.3608 14.0932L17.1855 14.3938C16.9393 14.8021 16.6633 15.1881 16.3611 15.5519C16.1411 15.8191 15.7755 15.9082 15.4473 15.8043L13.3697 15.1473C12.8699 15.5296 12.3178 15.8488 11.7285 16.0901L11.2622 18.2094C11.1876 18.5472 10.9265 18.8144 10.5834 18.8701C10.0686 18.9555 9.53898 19 8.99814 19C8.45729 19 7.92763 18.9555 7.41289 18.8701C7.06973 18.8144 6.80863 18.5472 6.73403 18.2094L6.26779 16.0901C5.67845 15.8488 5.12641 15.5296 4.62659 15.1473L2.55272 15.808C2.22448 15.9119 1.85894 15.8191 1.63887 15.5556C1.33674 15.1918 1.06072 14.8058 0.814545 14.3975L0.639236 14.0969C0.411707 13.6886 0.214018 13.2655 0.0498982 12.8238C-0.0694614 12.5009 0.0312482 12.1408 0.288617 11.9107L1.9037 10.4483C1.86267 10.1365 1.84029 9.82106 1.84029 9.50186C1.84029 9.18265 1.86267 8.86716 1.9037 8.55909L0.288617 7.0967C0.0312482 6.86658 -0.0694614 6.50654 0.0498982 6.18363C0.214018 5.74194 0.411707 5.31881 0.639236 4.91053L0.814545 4.60988C1.06072 4.2016 1.33674 3.81559 1.63887 3.45185C1.85894 3.18461 2.22448 3.09553 2.55272 3.19945L4.63032 3.85642C5.13014 3.47412 5.68218 3.15491 6.27152 2.91366L6.73776 0.794296C6.81236 0.456534 7.07346 0.189295 7.41662 0.13362C7.93136 0.0445399 8.46102 0 9.00187 0C9.54271 0 10.0724 0.04454 10.5871 0.129908C10.9303 0.185583 11.1914 0.452823 11.266 0.790584L11.7322 2.90994C12.3216 3.1512 12.8736 3.4704 13.3734 3.85271L15.451 3.19574C15.7793 3.09181 16.1448 3.18461 16.3649 3.44813C16.667 3.81188 16.943 4.19789 17.1892 4.60617L17.3645 4.90682C17.592 5.3151 17.7897 5.73823 17.9538 6.17992L17.9501 6.18363ZM9.00187 12.4712C9.79327 12.4712 10.5523 12.1583 11.1119 11.6015C11.6715 11.0446 11.9859 10.2894 11.9859 9.50186C11.9859 8.71434 11.6715 7.95908 11.1119 7.40222C10.5523 6.84537 9.79327 6.53253 9.00187 6.53253C8.21046 6.53253 7.45147 6.84537 6.89187 7.40222C6.33226 7.95908 6.01788 8.71434 6.01788 9.50186C6.01788 10.2894 6.33226 11.0446 6.89187 11.6015C7.45147 12.1583 8.21046 12.4712 9.00187 12.4712Z"
+                                fill="#515151" />
+                        </svg>
+                        Настройки
+                    </div>
                     <div class="menu-arrow">
                         <svg v-if="showSettings" width="14" height="15" viewBox="0 0 14 15" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -82,7 +90,8 @@
                             </span>
                         </div>
                         <transition name="expand">
-                            <div v-if="showAvatarDropdown" class="dropdown-list">
+                            <div v-if="showAvatarDropdown" class="dropdown-list"
+                                :class="{ 'just-border': isDropdownOpen || selectedAvatar !== avatar }">
                                 <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
                                     @click="selectedAvatar = avatar" :class="{
                         'active-avatar': selectedAvatar === avatar,
@@ -128,7 +137,8 @@
                             </span>
                         </div>
                         <transition name="expand">
-                            <div v-if="showAspectDropdown" class="dropdown-list">
+                            <div v-if="showAspectDropdown" class="dropdown-list"
+                                :class="{ 'just-border': isDropdownOpen || selectedAspect !== option }">
                                 <div v-for="(option, index) in aspectRatios" :key="index" class="dropdown-item"
                                     @click="selectedAspect = option" :class="{
                         'active-avatar': selectedAspect === option,
@@ -169,28 +179,23 @@
                     </div>
                 </transition>
             </div>
-
-            <!-- Social Networks (hidden when any dropdown is open) -->
-            <div class="menu-item" v-if="!showSettings && !showTariffDropdown">
-                <div @click="showSocialNetworkModal = true" class="menu-text">Соцсети</div>
-                <div class="menu-arrow">
-                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
-                    </svg>
-                </div>
-                <SocialNetworkModal :visible="showSocialNetworkModal" @close="showSocialNetworkModal = false" />
-            </div>
-            
             <!-- Buy Photos (hidden when settings dropdown is open) -->
             <div class="menu-item" v-if="!showSettings && !showTariffDropdown">
-                <div @click="toggleTariffDropdown" class="menu-text">Купить фото</div>
+                <div @click="toggleTariffDropdown" class="menu-text">
+                    <svg class="me-2" width="24" height="19" viewBox="0 0 24 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M6.98906 1.5375L6.50156 3H3C1.34531 3 0 4.34531 0 6V16C0 17.6547 1.34531 19 3 19H21C22.6547 19 24 17.6547 24 16V6C24 4.34531 22.6547 3 21 3H17.4984L17.0109 1.5375C16.7062 0.61875 15.8484 0 14.8781 0H9.12188C8.15156 0 7.29375 0.61875 6.98906 1.5375ZM12 6.5C13.1935 6.5 14.3381 6.97411 15.182 7.81802C16.0259 8.66193 16.5 9.80653 16.5 11C16.5 12.1935 16.0259 13.3381 15.182 14.182C14.3381 15.0259 13.1935 15.5 12 15.5C10.8065 15.5 9.66193 15.0259 8.81802 14.182C7.97411 13.3381 7.5 12.1935 7.5 11C7.5 9.80653 7.97411 8.66193 8.81802 7.81802C9.66193 6.97411 10.8065 6.5 12 6.5Z"
+                            fill="#515151" />
+                    </svg>
+                    Купить фото
+                </div>
                 <div class="menu-arrow">
                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
                     </svg>
                 </div>
             </div>
-
             <transition name="expand">
                 <div v-if="showTariffDropdown" class="tariff-dropdown">
                     <div class="dropdown-header-with-close">
@@ -209,12 +214,16 @@
                     </div>
                 </div>
             </transition>
-
             <PaymentModal :visible="showPaymentModal" @close="showPaymentModal = false" />
-
             <!-- Care Service (hidden when any dropdown is open) -->
             <div class="menu-item" v-if="!showSettings && !showTariffDropdown">
                 <a @click="showCareServiceModal = true" target="_blank" class="menu-text">
+                    <svg class="me-2" width="22" height="19" viewBox="0 0 22 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2.04531 11.2064L9.80977 18.527C10.132 18.8308 10.5574 19 11 19C11.4426 19 11.868 18.8308 12.1902 18.527L19.9547 11.2064C21.2609 9.9784 22 8.25566 22 6.45481V6.20313C22 3.16989 19.8301 0.58361 16.8695 0.0845793C14.9102 -0.245215 12.9164 0.401355 11.5156 1.816L11 2.33672L10.4844 1.816C9.08359 0.401355 7.08984 -0.245215 5.13047 0.0845793C2.16992 0.58361 0 3.16989 0 6.20313V6.45481C0 8.25566 0.739062 9.9784 2.04531 11.2064Z"
+                            fill="#515151" />
+                    </svg>
                     Служба заботы
                 </a>
                 <div class="menu-arrow">
@@ -223,6 +232,24 @@
                     </svg>
                 </div>
                 <CareServiceModal :visible="showCareServiceModal" @close="showCareServiceModal = false" />
+            </div>
+            <!-- Social Networks (hidden when any dropdown is open) -->
+            <div class="menu-item" v-if="!showSettings && !showTariffDropdown">
+                <div @click="showSocialNetworkModal = true" class="menu-text">
+                    <svg class="me-2" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11 0C4.92339 0 0 4.92339 0 11C0 17.0766 4.92339 22 11 22C17.0766 22 22 17.0766 22 11C22 4.92339 17.0766 0 11 0ZM16.1008 7.48266C15.9367 9.22137 15.2181 13.444 14.8544 15.3911C14.6992 16.2161 14.3976 16.4911 14.1048 16.5177C13.4661 16.5754 12.9827 16.0964 12.3617 15.6883C11.3948 15.054 10.8448 14.6593 9.90887 14.0383C8.82218 13.3242 9.52742 12.9294 10.144 12.2863C10.3081 12.1177 13.1202 9.55847 13.1734 9.32782C13.1823 9.29677 13.1867 9.19032 13.1202 9.13266C13.0536 9.075 12.9605 9.09718 12.894 9.11048C12.7964 9.13118 11.2499 10.1528 8.25444 12.1754C7.8168 12.477 7.41909 12.6234 7.06129 12.6145C6.66653 12.6056 5.9125 12.3927 5.34919 12.2109C4.66169 11.9891 4.11169 11.8694 4.16048 11.4879C4.18414 11.2898 4.45766 11.0872 4.98105 10.8802C8.18643 9.48454 10.3243 8.56344 11.3948 8.11694C14.4508 6.84839 15.0851 6.62661 15.4976 6.61774C15.5907 6.61774 15.7903 6.63992 15.9234 6.74637C16.0102 6.82272 16.0656 6.92865 16.0786 7.04355C16.1026 7.18861 16.1101 7.33592 16.1008 7.48266Z"
+                            fill="#515151" />
+                    </svg>
+                    Соцсети
+                </div>
+                <div class="menu-arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <SocialNetworkModal :visible="showSocialNetworkModal" @close="showSocialNetworkModal = false" />
             </div>
         </div>
     </div>
@@ -412,14 +439,23 @@ const selectPackage = (amount) => {
     margin-top: -3rem;
     margin-bottom: 4rem;
     position: relative;
+    padding-bottom: 1rem;
 }
 
 .menu-item {
     display: flex;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px 5px;
+    margin: 0 15px;
     border-bottom: 1px solid #333;
     cursor: pointer;
+}
+
+.just-border {
+    border-bottom: 1px solid #333;
+    padding-left: 10px;
+    margin-left: -4px;
+    margin-right: -4px;
 }
 
 .menu-text {
@@ -437,7 +473,7 @@ const selectPackage = (amount) => {
     padding: 10px 20px;
     position: relative;
     margin-top: 0;
-    border-top: 1px solid #333;
+    /* border-top: 1px solid #333; */
     z-index: 1;
 }
 
@@ -473,12 +509,15 @@ const selectPackage = (amount) => {
 
 .add-new {
     color: #F0A8E1;
-    margin-left: 12px;
-    border-bottom: 1px solid #333;
+    padding-left: 12px;
+    /* margin-left: -14px; */
+    /* margin-right: -4px; */
+    /* border-bottom: 1px solid #333; */
 }
 
 .dropdown-subtitle {
-    padding: 10px 12px;
+    padding: 10px 10px;
+    margin: 0 -4px;
     cursor: pointer;
     transition: color 0.2s ease;
     color: #ffffff;
@@ -486,6 +525,7 @@ const selectPackage = (amount) => {
 
 .subtitle-greyed {
     color: #F0A8E1 !important;
+    border-bottom: none;
 }
 
 .dropdown-item {
