@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="up" @click="showExpanded = !showExpanded">
-            <div :class="['toggle-wrapper', { expanded: showExpanded }]">
-                <span v-if="showExpanded" class="toggle-text">Генераций осталось</span>
-                <div class="toggle-count">{{ count }}</div>
-            </div>
-            <div class="just-background"  v-show="!showExpanded"></div>
+        <div :class="['toggle-wrapper', { expanded: showExpanded }]">
+          <span class="toggle-text" :class="{ visible: showExpanded }">Генераций осталось</span>
+          <div class="toggle-count">{{ count }}</div>
         </div>
+        <div class="just-background" v-show="!showExpanded"></div>
+      </div>
         <div class="creator">
             <img src="/images/chat-back.png" alt="">
             <div class="text-fon">
@@ -356,37 +356,73 @@ const parseMessage = (text) => {
 .up {
     position: fixed;
     top: 1.8rem;
+    left: 1rem;
     z-index: 1000;
+    perspective: 1000px;
 }
+  
 .toggle-wrapper {
     display: flex;
     align-items: center;
-    background: transparent;
-    color: white;
+    height: 32px;
     border-radius: 999px;
-    padding: 4px;
+    background: transparent;
     cursor: pointer;
-    transition: all 0.3s ease;
     position: relative;
-    width: fit-content;
-    margin-right: -1rem !important;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    will-change: transform, width;
 }
-.toggle-wrapper .toggle-count {
+  
+.toggle-wrapper.expanded {
+    background: white;
+    padding-left: 12px;
+    transform: translateZ(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+  
+.toggle-text {
+    font-size: 14px;
+    color: black;
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    transition: all 0.4s ease 0.1s;
+    transform: translateX(-10px);
+}
+  
+.toggle-text.visible {
+    max-width: 300px;
+    opacity: 1;
+    transform: translateX(0);
+}
+  
+.toggle-count {
     background: #303030;
     color: white;
-    width: 36px;
-    height: 30px;
+    min-width: 36px;
+    height: 32px;
     border-radius: 999px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
     z-index: 1;
-    transition: all 0.3s ease;
-    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0 10px;
+    transform: translateZ(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+.toggle-wrapper.expanded .toggle-count {
+    transform: translateZ(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+  
 .just-background {
-        background: #ffffff;
+    background: #ffffff;
     width: 36px;
     height: 28px;
     border-radius: 999px;
@@ -394,33 +430,17 @@ const parseMessage = (text) => {
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    z-index: 1;
-    transition: all 0.3s ease;
-    margin-top: -2.05rem;
-    margin-left: 1rem;
+    z-index: -1;
+    position: absolute;
+    top: 2px;
+    left: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1);
+    opacity: 1;
 }
-.toggle-wrapper .toggle-text {
-    font-size: 14px;
-    color: black;
-    margin-right: 10px;
-    transition: opacity 0.6s ease;
 
-}
-.toggle-wrapper.expanded {
-    background: white;
-    padding: 0cap 12px;
-    padding-right: 10px;
-    
-}
-.toggle-wrapper.expanded .toggle-count {
-    background: #303030;
-    color: white;
-    margin-right: -1rem;
-    z-index: 3;
-    position: relative;
-    padding: 0 10px;
-}
-.toggle-wrapper:not(.expanded) .toggle-text {
-    display: none;
+.just-background.v-show-false {
+    transform: scale(0.8);
+    opacity: 0;
 }
 </style>

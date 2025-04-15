@@ -65,7 +65,7 @@ watch(() => props.visible, (newVisible) => {
     padding: 26px 16px 16px 16px;
     width: 100%;
     max-width: 500px;
-    height: 45%;
+    height: 40%;
 }
 
 .modal-header {
