@@ -11,6 +11,7 @@
 
     <div class="image-wrapper" ref="imageWrapper">
       <img class="downloading-img" src="/images/downloading.png" alt="" />
+      
 
       <transition name="fade">
         <svg v-if="showIcon" class="floating-icon"
@@ -88,7 +89,7 @@ const updateIcon = () => {
   const offsetY = radius * Math.sin(angle);
 
   iconPosition.value = {
-    top: imageRect.height / 2 + offsetY - 40,
+    top: imageRect.height / 2 + offsetY - 20,
     left: imageRect.width / 2 + offsetX - 40,
   };
 
@@ -141,7 +142,7 @@ onBeforeUnmount(() => {
 }
 
 .downloading-img {
-  width: 120%;
+  width: 75%;
 }
 
 .floating-icon {

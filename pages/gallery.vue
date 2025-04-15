@@ -33,12 +33,14 @@
   .about-button {
     background: #F0A8E1;
     color: white;
-    border-radius: 7px;
+    font-weight: bold;
+    border-radius: 10px;
     border: none;
     width: 100%;
     margin-top: 3rem;
-    padding: 0.6rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-size: 1rem;
+    font-size: 20px;
   }
   </style>
   

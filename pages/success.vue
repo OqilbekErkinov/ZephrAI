@@ -45,7 +45,7 @@ onMounted(() => {
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    width: 50%;
+    width: 75%;
     margin-top: 4rem;
     margin-bottom: 6rem;
     margin-right: 7.5rem;

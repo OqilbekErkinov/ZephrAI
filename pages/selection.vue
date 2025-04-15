@@ -7,72 +7,97 @@
     </p>
     <div class="premium-box">
       <h4 class="mb-3">Названия моделя</h4>
-      <input type="text" v-model="name" :placeholder="nameError ? 'Имя*' : 'Имя*'" :class="{ error: nameError }"
-        class="text-input" @focus="nameError = false" />
+      <input
+        type="text"
+        v-model="name"
+        :placeholder="nameError ? 'Имя*' : 'Имя*'"
+        :class="{ error: nameError }"
+        class="text-input"
+        @focus="nameError = false"
+      />
 
       <!-- Возраст Dropdown -->
       <div class="dropdown">
-        <div class="dropdown-header" @click="toggleDropdown('age')" :class="{ 'subtitle-greyed': showAge }">
+        <div
+          class="dropdown-header"
+          @click="toggleDropdown('age')"
+          :class="{ 'subtitle-greyed': age }"
+        >
           Возраст
           <span class="ml-2">
-            <svg v-if="showAge" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg v-if="showAge" width="14" height="8" viewBox="0 0 14 8" fill="none">
               <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
             </svg>
-            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none">
               <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
             </svg>
           </span>
         </div>
         <div v-if="showAge" class="dropdown-options">
           <label class="option mb-4">
-            <input type="radio" value="child" v-model="age" />
+            <input type="radio" value="child" v-model="age" @change="ageError = false" />
             Ребенок
           </label>
           <label class="option mt-4 pb-3" style="border-bottom: 1px solid #393939">
-            <input type="radio" value="adult" v-model="age" style="color: transparent" />
+            <input type="radio" value="adult" v-model="age" @change="ageError = false" />
             Взрослый
           </label>
         </div>
       </div>
+      <p v-if="ageError" class="error-msg">Пожалуйста, выберите возраст</p>
 
       <!-- Пол Dropdown -->
       <div class="dropdown mb-1">
-        <div class="dropdown-header pol-header" style="border-top: none; margin-top: -1rem;" @click="toggleDropdown('gender')" :class="{ 'subtitle-greyed': showGender }">
+        <div
+          class="dropdown-header pol-header"
+          style="border-top: none; margin-top: -1rem;"
+          @click="toggleDropdown('gender')"
+          :class="{ 'subtitle-greyed': gender }"
+        >
           Пол
-          <span class="">
-            <svg v-if="showGender" width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <span>
+            <svg v-if="showGender" width="14" height="8" viewBox="0 0 14 8" fill="none">
               <path d="M1 7L7 1L10 4L13 7" stroke="white" stroke-linecap="round" />
             </svg>
-            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg v-else width="8" height="14" viewBox="0 0 8 14" fill="none">
               <path d="M1 1L7 7L1 13" stroke="white" stroke-linecap="round" />
             </svg>
           </span>
         </div>
+        
         <div v-if="showGender" class="dropdown-options">
           <label class="option mb-4">
-            <input type="radio" value="male" v-model="gender" />
+            <input type="radio" value="male" v-model="gender" @change="genderError = false"/>
             Мужчина
           </label>
           <label class="option mt-4 pb-3" style="border-bottom: 1px solid #393939">
-            <input type="radio" value="female" v-model="gender" />
+            <input type="radio" value="female" v-model="gender" @change="genderError = false"/>
             Женщина
           </label>
         </div>
       </div>
+      <p v-if="genderError" class="error-msg mt-2">Пожалуйста, выберите пол</p>
     </div>
-    <NuxtLink to="/download">
-      <button class="premium-button" @click="handleSubmit">Подтверит</button>
-    </NuxtLink>
+
+    <!-- Confirm button -->
+    <button class="premium-button" @click="handleSubmit">Подтверить</button>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const name = ref('')
 const age = ref('')
 const gender = ref('')
 const nameError = ref(false)
+const ageError = ref(false)
+const genderError = ref(false)
+
+
 const showAge = ref(false)
 const showGender = ref(false)
 
@@ -87,11 +112,30 @@ const toggleDropdown = (type) => {
 }
 
 const handleSubmit = () => {
+  let hasError = false
+
   if (!name.value.trim()) {
     nameError.value = true
-    return
+    hasError = true
   }
-  alert(`Name: ${name.value}, Age: ${age.value}, Gender: ${gender.value}`)
+
+  if (!age.value) {
+    ageError.value = true
+    hasError = true
+  } else {
+    ageError.value = false
+  }
+
+  if (!gender.value) {
+    genderError.value = true
+    hasError = true
+  } else {
+    genderError.value = false
+  }
+
+  if (hasError) return
+
+  router.push('/download')
 }
 </script>
 
@@ -209,5 +253,11 @@ input[type="radio"]:checked::before {
   align-items: center;
   font-size: 14px;
   color: white;
+}
+
+.error-msg {
+  color: #A50A0A;
+  font-size: 13px;
+  margin: -0.5rem 0 1rem 0.5rem;
 }
 </style>
