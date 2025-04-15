@@ -389,6 +389,8 @@ function shareToSocial(platform) {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    padding-bottom: 8rem;
+    margin-bottom: -7rem;
 }
 
 .selection-header {
@@ -420,8 +422,8 @@ function shareToSocial(platform) {
 .vue3-carousel {
     position: relative;
     width: 100%;
-    height: 60vh;
-    padding: 20px 0;
+    height: 67vh;
+    padding-top: 20px;
     --carousel-slide-width: 80%;
 }
 
@@ -520,7 +522,9 @@ function shareToSocial(platform) {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* padding-bottom: 7rem; */
 }
 
 .social-btn {

@@ -114,7 +114,7 @@ watch(() => props.visible, (newVisible) => {
 }
 
 .payment-icon {
-  height: 2.8rem;
+  height: 2.3rem;
 }
 
 .fixed-footer {
