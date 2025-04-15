@@ -90,7 +90,7 @@
                             </span>
                         </div>
                         <transition name="expand">
-                            <div v-if="showAvatarDropdown" class="dropdown-list"
+                            <div v-if="showAvatarDropdown" class="dropdown-list pb-2"
                                 :class="{ 'just-border': isDropdownOpen || selectedAvatar !== avatar }">
                                 <div v-for="(avatar, index) in avatars" :key="index" class="dropdown-item"
                                     @click="selectedAvatar = avatar" :class="{
@@ -107,13 +107,13 @@
                                         </svg>
                                     </span>
                                 </div>
-                                <div class="dropdown-ite add-new mt-3 pb-2" @click="addNewAvatar">Добавить новый аватар
+                                <NuxtLink to="/selection" class="dropdown-ite add-new mt-3" style="text-decoration: none;">Добавить новый аватар
                                     <svg width="13" height="13" viewBox="0 0 13 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0.70459 6.61523H12M6.35231 1.23046V12" stroke="#F0A8E1"
                                             stroke-linecap="round" />
                                     </svg>
-                                </div>
+                                </NuxtLink>
                             </div>
                         </transition>
                         <div class="dropdown-subtitle" @click="toggleAspectDropdown"
@@ -170,9 +170,8 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-
                             Язык
-                            <span class="menu-arrow" style="color: #515151">Русский</span>
+                            <span class="menu-arrow" style="color: #515151; font-size: 15px">Русский</span>
                         </div>
                         <LanguageModal :visible="showLanguageModal" @close="showLanguageModal = false" />
 
@@ -385,6 +384,7 @@ const selectPackage = (amount) => {
     background-color: #3F313C;
     border-radius: 15px;
     padding: 20px;
+    padding-top: 27px;
     padding-bottom: 4rem;
     margin-bottom: 15px;
     display: flex;

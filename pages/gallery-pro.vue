@@ -24,15 +24,19 @@
                     <img :src="selectedImage" alt="Selected image" />
                 </div>
                 <button class="nav-button prev-button" @click.stop="showPreviousImage">
-                    <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18L9 12L15 6" stroke="#969696" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
+                    <svg class="me-1" width="8" height="13" viewBox="0 0 6 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.14275 10C5.32552 10 5.50838 9.93025 5.64767 9.79073C5.92669 9.51171 5.92669 9.0597 5.64767 8.78068L1.86593 4.99994L5.64767 1.21932C5.92669 0.940301 5.92669 0.488287 5.64767 0.209266C5.36865 -0.0697552 4.91663 -0.0697552 4.63761 0.209266L0.35185 4.49503C0.0728288 4.77405 0.0728288 5.22606 0.35185 5.50508L4.63761 9.79085C4.77668 9.9308 4.95971 10 5.14275 10Z"
+                            fill="#969696" />
                     </svg>
                 </button>
                 <button class="nav-button next-button" @click.stop="showNextImage">
-                    <svg class="ms-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 6L15 12L9 18" stroke="#969696" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
+                    <svg class="ms-1" width="8" height="13" viewBox="0 0 6 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.857249 10C0.674479 10 0.491619 9.93025 0.352332 9.79073C0.0733112 9.51171 0.0733112 9.0597 0.352332 8.78068L4.13407 4.99994L0.352332 1.21932C0.0733112 0.940301 0.0733112 0.488287 0.352332 0.209266C0.631353 -0.0697552 1.08337 -0.0697552 1.36239 0.209266L5.64815 4.49503C5.92717 4.77405 5.92717 5.22606 5.64815 5.50508L1.36239 9.79085C1.22332 9.9308 1.04029 10 0.857249 10Z"
+                            fill="#969696" />
                     </svg>
                 </button>
             </div>
@@ -67,8 +71,8 @@
                 </div>
 
                 <!-- Vue3 Carousel -->
-                <Carousel ref="carousel" :items-to-show="1.25" :wrap-around="true" :snap-align="'center'"
-                    v-model="currentSlide" class="vue3-carousel">
+                <Carousel ref="carouselRef" v-model="currentSlide" :items-to-show="1.25" :wrap-around="true"
+                    :snap-align="'center'" class="vue3-carousel">
                     <Slide v-for="(image, index) in aboutGalleryImages" :key="index">
                         <div class="slide-content">
                             <img :src="image" :alt="`Image ${index + 1}`" />
@@ -80,15 +84,31 @@
                                         stroke-linejoin="round" />
                                 </svg>
                             </div>
-
                         </div>
                     </Slide>
 
+                    <!-- Custom Navigation Buttons -->
                     <template #addons>
-                        <Navigation />
+                        <div class="custom-navigation">
+                            <button class="nav-button prev-button prevv" @click="goPrev">
+                                <svg width="8" height="13" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M5.14275 10C5.32552 10 5.50838 9.93025 5.64767 9.79073C5.92669 9.51171 5.92669 9.0597 5.64767 8.78068L1.86593 4.99994L5.64767 1.21932C5.92669 0.940301 5.92669 0.488287 5.64767 0.209266C5.36865 -0.0697552 4.91663 -0.0697552 4.63761 0.209266L0.35185 4.49503C0.0728288 4.77405 0.0728288 5.22606 0.35185 5.50508L4.63761 9.79085C4.77668 9.9308 4.95971 10 5.14275 10Z"
+                                        fill="#969696" />
+                                </svg>
+                            </button>
+                            <button class="nav-button next-button nextt" @click="goNext">
+                                <svg width="8" height="13" viewBox="0 0 6 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.857249 10C0.674479 10 0.491619 9.93025 0.352332 9.79073C0.0733112 9.51171 0.0733112 9.0597 0.352332 8.78068L4.13407 4.99994L0.352332 1.21932C0.0733112 0.940301 0.0733112 0.488287 0.352332 0.209266C0.631353 -0.0697552 1.08337 -0.0697552 1.36239 0.209266L5.64815 4.49503C5.92717 4.77405 5.92717 5.22606 5.64815 5.50508L1.36239 9.79085C1.22332 9.9308 1.04029 10 0.857249 10Z"
+                                        fill="#969696" />
+                                </svg>
+                            </button>
+                        </div>
                     </template>
                 </Carousel>
-
                 <!-- Social media buttons -->
                 <div class="social-buttons">
                     <button class="social-btn instagram" @click="shareToSocial('instagram')">
@@ -105,7 +125,6 @@
         </div>
     </div>
 </template>
-
 <script setup>
 import { ref, onMounted, nextTick } from 'vue';
 import { Carousel, Slide, Navigation } from 'vue3-carousel';
@@ -128,6 +147,19 @@ const selectedImage = ref(null);
 const currentImageIndex = ref(0);
 const currentSlide = ref(0);
 const carousel = ref(null);
+
+const carouselRef = ref(null);
+const goPrev = () => {
+    if (carouselRef.value) {
+        carouselRef.value.prev();
+    }
+};
+
+const goNext = () => {
+    if (carouselRef.value) {
+        carouselRef.value.next();
+    }
+};
 
 function openImage(image, index) {
     selectedImage.value = image;
@@ -324,17 +356,22 @@ function shareToSocial(platform) {
 .next-button {
     right: 30px;
 }
-
+.prevv {
+    left: 34px;
+}
+.nextt {
+    right: 34px;
+}
 .nav-button {
     position: absolute;
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2px);
     color: #969696;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: none;
     display: flex;
@@ -442,7 +479,7 @@ function shareToSocial(platform) {
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease-in-out;
-    padding: 0 10px;
+    padding: 0 14px;
 }
 
 .slide-content {
@@ -528,14 +565,14 @@ function shareToSocial(platform) {
 }
 
 .social-btn {
-     width: 50px;
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    cursor: pointer; 
+    cursor: pointer;
     background: transparent;
 }
 </style>
