@@ -6,13 +6,13 @@
 
         <h1 class="main-title">Как это работает</h1>
         <p class="subtext mb-4">
-            Мы улучшаем фото, добавляем стильные эффекты и помогаем создавать
-            идеальные кадры. Для этого вам нужно приобрести PREMIUM.
-            Оплачивай и начинаем прямо сейчас!
-            Суперскидка только сейчас -50%!
+            Мы генерируем фото с помощью ИИ, добавляем стильные эффекты и помогаем создавать идеальные кадры. Для этого
+            вам нужно приобрести PREMIUM. Оплачивайте — и начинаем прямо сейчас! Суперскидка — только сейчас: -50%!
         </p>
         <span style="font-size: 20px;">
-            <span style="color: #F0A8E1; margin: 1rem; font-size: 24px;  font-family: Gropled, sans-serif">199 990 сум</span>вместо&nbsp; <span class="highlight" style=" font-family: Gropled, sans-serif; font-size: 24px">399 980
+            <span style="color: #F0A8E1; margin: 1rem; font-size: 24px;  font-family: Gropled, sans-serif">199 990
+                сум</span>вместо&nbsp; <span class="highlight"
+                style=" font-family: Gropled, sans-serif; font-size: 24px">399 980
                 сум</span>
         </span>
         <div class="premium-box" style="margin-top: 32px">
@@ -147,5 +147,4 @@ const images = [
     margin: 0 0;
     margin-top: 20px
 }
-
 </style>

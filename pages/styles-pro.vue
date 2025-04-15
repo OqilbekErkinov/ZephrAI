@@ -130,7 +130,7 @@ onMounted(() => {
         }, 6000)
         setTimeout(() => {
             messages.value.unshift({
-                text: 'Если нужно добавить или изменить какие-то моменты, <a href="/styles-category" class="highlight-link">дайте знать!</a>',
+                text: 'Хочешь больше стиля?<br/><a href="/styles-category" class="highlight-link">Новые стили уже тут!</a>',
                 from: 'bot'
             })
             scrollToBottom()
@@ -190,7 +190,6 @@ const parseMessage = (text) => {
     width: 92%;
     overflow-y: auto;
     margin-bottom: 5rem;
-    margin-left: -1rem;
 }
 
 .message {
