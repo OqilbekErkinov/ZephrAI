@@ -3,12 +3,12 @@
         <h1 class="style-heading"><span class="highlight">Выбирайте</span><br><span
                 style="font-family: Futura PT, sans-serif">готовый стиль</span></h1>
         <div class="style-grid">
-            <div class="style-card" v-for="(style, i) in styles" :key="i"
-                :style="{ backgroundImage: `url(${style.img})` }">
-                <NuxtLink :to="{ path: '/styles-type', query: { category: style.title } }" style="text-decoration: none;">
+            <NuxtLink :to="{ path: '/styles-type', query: { category: style.title } }"  class="style-card" v-for="(style, i) in styles" :key="i"
+                :style="{ backgroundImage: `url(${style.img})` }" style="text-decoration: none;">
+                <div>
                     <p class="style-title">{{ style.title }}</p>
-                </NuxtLink>
-            </div>
+                </div>
+            </NuxtLink>
         </div>
     </div>
 </template>

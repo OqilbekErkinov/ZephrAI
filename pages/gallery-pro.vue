@@ -260,7 +260,7 @@ function shareToSocial(platform) {
 }
 
 .image-cardd.specialll {
-    width: 120px;
+    width: 100%;
     height: 160px;
     border-radius: 15px;
     overflow: hidden;
@@ -271,16 +271,11 @@ function shareToSocial(platform) {
 
 .about-gallery .image-cardd img {
     height: 160px;
-    width: 120px;
+    width: 100%;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
-
-.image-cardd.specialll:hover img {
-    transform: scale(1.05);
-}
-
 /* Fullscreen image viewer */
 .image-viewer {
     position: fixed;

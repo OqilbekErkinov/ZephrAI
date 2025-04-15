@@ -14,7 +14,7 @@
 
       <transition name="fade">
         <svg v-if="showIcon" class="floating-icon"
-          :style="{ top: iconPosition.top + 'px', left: iconPosition.left + 'px' }" width="150" height="130"
+          :style="{ top: iconPosition.top + 'px', left: iconPosition.left + 'px' }" width="90" height="80"
           viewBox="0 0 208 232" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M35.9438 102.848C123.968 98.0641 109.884 82.5177 121.621 2.39355C133.357 82.5177 119.274 98.0641 207.298 102.848C119.274 107.631 133.357 123.178 121.621 203.302C109.884 123.178 123.968 107.631 35.9438 102.848Z"
@@ -88,23 +88,21 @@ const updateIcon = () => {
   const offsetY = radius * Math.sin(angle);
 
   iconPosition.value = {
-    top: imageRect.height / 2 + offsetY - 20,
-    left: imageRect.width / 2 + offsetX - 20,
+    top: imageRect.height / 2 + offsetY - 40,
+    left: imageRect.width / 2 + offsetX - 40,
   };
 
   showIcon.value = true;
 
   setTimeout(() => {
     showIcon.value = false;
-  }, 1000); // show for 1 second
+  }, 1000);
 };
 
 onMounted(() => {
-  // Animation loop — independent
   intervalId = setInterval(updateIcon, 2000);
-  updateIcon(); // run immediately too
+  updateIcon();
 
-  // Redirect after 9 sec
   setTimeout(() => {
     router.push('/success');
   }, 6000);
@@ -143,7 +141,7 @@ onBeforeUnmount(() => {
 }
 
 .downloading-img {
-  width: 250px;
+  width: 120%;
 }
 
 .floating-icon {

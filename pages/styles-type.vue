@@ -7,12 +7,12 @@
         <p class="cancel" @click="goBack">✕</p>
       </div>
       <div class="type-grid">
-        <div class="type-card" v-for="(type, i) in types" :key="i" :style="{ backgroundImage: `url(${type.img})` }">
-        <!-- <img :src="type.img" :alt="type.title" class="type-img" /> -->
-        <NuxtLink :to="{ path: '/styles-pro', query: { type: type.title } }" style="text-decoration: none;">
+        <NuxtLink class="type-card" v-for="(type, i) in types" :key="i" :style="{ backgroundImage: `url(${type.img})` }"
+        :to="{ path: '/styles-pro', query: { type: type.title } }" style="text-decoration: none;">
+        <div >
           <p class="type-title">{{ type.title }}</p>
-        </NuxtLink>
-      </div>
+        </div>
+      </NuxtLink>
     </div>
   </div>
   <div class="gradient-overlay top">
