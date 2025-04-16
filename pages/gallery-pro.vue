@@ -112,13 +112,13 @@
                 <!-- Social media buttons -->
                 <div class="social-buttons">
                     <button class="social-btn instagram" @click="shareToSocial('instagram')">
-                        <NuxtImg format="webp" loading="lazy" src="/images/icon-instagram.png" class="icon" />
+                        <img src="/images/icon-instagram.png" class="icon" />
                     </button>
                     <button class="social-btn telegram" @click="shareToSocial('telegram')">
-                        <NuxtImg format="webp" loading="lazy" src="/images/icon-telegram.png" class="icon" />
+                        <img src="/images/icon-telegram.png" class="icon" />
                     </button>
                     <button class="social-btn facebook" @click="shareToSocial('facebook')">
-                        <NuxtImg format="webp" loading="lazy" src="/images/icon-facebook.png" class="icon" />
+                        <img src="/images/icon-facebook.png" class="icon" />
                     </button>
                 </div>
             </div>

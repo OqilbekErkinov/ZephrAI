@@ -274,11 +274,27 @@
 
 <script setup>
 import { ref } from 'vue'
-import PaymentModal from '~/components/PaymentModal.vue'
-import CreditInfoModal from '~/components/CreditInfoModal.vue'
-import CareServiceModal from '~/components/CareServiceModal.vue'
-import SocialNetworkModal from '~/components/SocialNetworkModal.vue'
-import LanguageModal from '~/components/LanguageModal.vue'
+// import PaymentModal from '~/components/PaymentModal.vue'
+// import CreditInfoModal from '~/components/CreditInfoModal.vue'
+// import CareServiceModal from '~/components/CareServiceModal.vue'
+// import SocialNetworkModal from '~/components/SocialNetworkModal.vue'
+// import LanguageModal from '~/components/LanguageModal.vue'
+
+const PaymentModal = defineAsyncComponent(() =>
+  import('~/components/PaymentModal.vue')
+)
+const CreditInfoModal = defineAsyncComponent(() =>
+  import('~/components/CreditInfoModal.vue')
+)
+const CareServiceModal = defineAsyncComponent(() =>
+  import('~/components/CareServiceModal.vue')
+)
+const SocialNetworkModal = defineAsyncComponent(() =>
+  import('~/components/SocialNetworkModal.vue')
+)
+const LanguageModal = defineAsyncComponent(() =>
+  import('~/components/LanguageModal.vue')
+)
 
 const showSettings = ref(false)
 const showAvatarDropdown = ref(false)
