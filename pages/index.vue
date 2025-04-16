@@ -40,7 +40,7 @@
         </div> -->
 
         <div class="image-container">
-          <div class="image-card speciall mt-4">
+          <div class="image-card speciall">
             <NuxtImg format="webp" src="/images/home7.png" alt="Image 3" />
             <div class="zagruzit">Загрузи...</div>
           </div>
