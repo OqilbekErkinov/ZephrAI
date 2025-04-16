@@ -39,7 +39,7 @@
         </svg>
       </div> -->
 
-      <NuxtImg format="webp" loading="lazy" src='/images/premium.png' alt="premium" class="gallery-img"/>
+      <NuxtImg format="webp" loading="lazy" src='/images/premium.webp' alt="premium" class="gallery-img"/>
 
     </div>
     <h1 class="maintitle">Спасибо за покупку!</h1>

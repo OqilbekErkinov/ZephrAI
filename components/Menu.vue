@@ -26,7 +26,7 @@
 
             <NuxtLink to="/styles" :class="{ active: $route.path === '/styles' }" aria-label="Styles">
                 <NuxtImg format="webp" style="margin-top: -1.2rem; width: 40px;"
-                    :src="['/styles', '/premium', '/selection', '/download', '/styles-category', '/styles-type', '/styles-pro'].includes($route.path) ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
+                    :src="['/styles', '/premium', '/selection', '/download', '/styles-category', '/styles-type', '/styles-pro'].includes($route.path) ? '/images/logo2.webp' : '/images/logo1.webp'" alt="Logo" />
             </NuxtLink>
 
             <NuxtLink to="/creator" :class="{ active: $route.path === '/creator' }" aria-label="Creator">
