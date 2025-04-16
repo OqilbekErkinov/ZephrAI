@@ -11,10 +11,10 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <NuxtImg format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.png" alt="Image 1" />
+          <NuxtImg format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <NuxtImg format="webp" loading="lazy" class="large-image img" src="/images/home-large2.png" alt="Image 2" />
+          <NuxtImg format="webp" loading="lazy" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">
@@ -33,23 +33,23 @@
 
         <!-- Gradientlar -->
         <!-- <div class="gradient-overlay top">
-          <img src="/images/gradient1.png" alt="">
+          <img src="/images/gradient1.webp" alt="">
         </div>
         <div class="gradient-overlay bottom">
-          <img src="/images/gradient2.png" alt="">
+          <img src="/images/gradient2.webp" alt="">
         </div> -->
 
         <div class="image-container">
           <div class="image-card speciall">
-            <NuxtImg format="webp" src="/images/home7.png" alt="Image 3" />
+            <NuxtImg format="webp" src="/images/home7.webp" alt="Image 3" />
             <div class="zagruzit">Загрузи...</div>
           </div>
           <div class="image-galleryyy">
             <div class="image-card special me-2">
-              <NuxtImg format="webp" loading="lazy" src="/images/home5.png" alt="Image 4" />
+              <NuxtImg format="webp" loading="lazy" src="/images/home5.webp" alt="Image 4" />
             </div>
             <div class="image-card special">
-              <NuxtImg format="webp" loading="lazy" src="/images/home6.png" alt="Image 5" />
+              <NuxtImg format="webp" loading="lazy" src="/images/home6.webp" alt="Image 5" />
             </div>
           </div>
         </div>
@@ -122,20 +122,20 @@
 <script setup>
 import { ref } from 'vue';
 const images = ref([
-  "/images/home4.png",
-  "/images/home3.png",
-  "/images/home2.png",
-  "/images/home1.png"
+  "/images/home4.webp",
+  "/images/home3.webp",
+  "/images/home2.webp",
+  "/images/home1.webp"
 ]);
 const thirdGalleryImages = ref([
-  "/images/home10.png",
-  "/images/home11.png",
-  "/images/home12.png",
-  "/images/home13.png",
-  "/images/home14.png",
-  "/images/home15.png",
-  "/images/home16.png",
-  "/images/home17.png"
+  "/images/home10.webp",
+  "/images/home11.webp",
+  "/images/home12.webp",
+  "/images/home13.webp",
+  "/images/home14.webp",
+  "/images/home15.webp",
+  "/images/home16.webp",
+  "/images/home17.webp"
 ]);
 onMounted(() => {
   document.title = 'Zephyr AI';
