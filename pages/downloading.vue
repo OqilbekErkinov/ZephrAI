@@ -10,7 +10,7 @@
     </p>
 
     <div class="image-wrapper" ref="imageWrapper">
-      <img class="downloading-img" src="/images/downloading.png" alt="" />
+      <NuxtImg format="webp" loading="lazy" class="downloading-img" src="/images/downloading.png" alt="" />
       
 
       <transition name="fade">

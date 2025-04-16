@@ -1,7 +1,7 @@
 <template>
     <div class="promo-wrapper">
         <div class="image-gallerry">
-            <img v-for="(img, i) in images" :key="i" :src="img" alt="photo" class="gallery-img" />
+            <NuxtImg format="webp" loading="lazy" v-for="(img, i) in images" :key="i" :src="img" alt="photo" class="gallery-img" />
         </div>
 
         <h1 class="main-title">Как это работает</h1>

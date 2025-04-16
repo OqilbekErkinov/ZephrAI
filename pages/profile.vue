@@ -4,7 +4,7 @@
         <div class="profile-photo">
             <div class="photo-container">
                 <label for="fileUpload" class="photo-placeholder">
-                    <img :src="userImage || '/images/profile.png'" alt="" class="avatar-img">
+                    <NuxtImg format="webp" loading="lazy" :src="userImage || '/images/profile.png'" alt="" class="avatar-img" />
                     <input type="file" id="fileUpload" @change="onFileChange" hidden />
                 </label>
             </div>

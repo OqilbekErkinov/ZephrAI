@@ -4,7 +4,7 @@
 
         <div class="about-gallery">
             <div class="image-cardd specialll" v-for="(image, index) in aboutGalleryImages" :key="index">
-                <img :src="image" :alt="`Image ${index + 5}`" @click="openImage(image, index)" />
+                <NuxtImg format="webp" loading="lazy" :src="image" :alt="`Image ${index + 5}`" @click="openImage(image, index)" />
             </div>
         </div>
 
@@ -21,7 +21,7 @@
             </div>
             <div class="viewer-content" @click.stop>
                 <div class="image-container">
-                    <img :src="selectedImage" alt="Selected image" />
+                    <NuxtImg format="webp" loading="lazy" :src="selectedImage" alt="Selected image" />
                 </div>
                 <button class="nav-button prev-button" @click.stop="showPreviousImage">
                     <svg class="me-1" width="8" height="13" viewBox="0 0 6 10" fill="none"
@@ -75,7 +75,7 @@
                     :snap-align="'center'" class="vue3-carousel">
                     <Slide v-for="(image, index) in aboutGalleryImages" :key="index">
                         <div class="slide-content">
-                            <img :src="image" :alt="`Image ${index + 1}`" />
+                            <NuxtImg format="webp" loading="lazy" :src="image" :alt="`Image ${index + 1}`" />
                             <div class="image-checkmark" :class="{ checked: isImageSelected(image) }"
                                 @click="toggleImageSelection(image)">
                                 <svg v-if="isImageSelected(image)" width="16" height="16" viewBox="0 0 24 24"
@@ -112,13 +112,13 @@
                 <!-- Social media buttons -->
                 <div class="social-buttons">
                     <button class="social-btn instagram" @click="shareToSocial('instagram')">
-                        <img src="/images/icon-instagram.png" class="icon" />
+                        <NuxtImg format="webp" loading="lazy" src="/images/icon-instagram.png" class="icon" />
                     </button>
                     <button class="social-btn telegram" @click="shareToSocial('telegram')">
-                        <img src="/images/icon-telegram.png" class="icon" />
+                        <NuxtImg format="webp" loading="lazy" src="/images/icon-telegram.png" class="icon" />
                     </button>
                     <button class="social-btn facebook" @click="shareToSocial('facebook')">
-                        <img src="/images/icon-facebook.png" class="icon" />
+                        <NuxtImg format="webp" loading="lazy" src="/images/icon-facebook.png" class="icon" />
                     </button>
                 </div>
             </div>

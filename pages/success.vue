@@ -6,7 +6,7 @@
             можете приступать к созданию
             впечатляющих изображений.
         </p>
-        <img class="success-img" src="/images/success.png" alt="">
+        <NuxtImg format="webp" loading="lazy" class="success-img" src="/images/success.png" alt="" />
     </div>
 </template>
 <script setup>

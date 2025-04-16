@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="gradient-overlay top">
-    <img src="/images/shadow2.png" alt="">
+    <NuxtImg format="webp" loading="lazy" src="/images/shadow2.png" alt="" />
   </div>
   </div>
 </template>

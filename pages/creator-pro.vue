@@ -258,8 +258,8 @@ const parseMessage = (text) => {
 
 .creator img {
     position: fixed;
-    left: 2.5rem;
-    right: 0;
+    /* left: 2.5rem; */
+    /* right: 0; */
     bottom: 14rem;
     z-index: 0;
 }

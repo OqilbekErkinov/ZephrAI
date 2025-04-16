@@ -13,7 +13,7 @@
         <div class="preview-section">
             <div class="image-preview-container">
                 <div class="image-preview" v-for="(file, index) in selectedFiles" :key="index">
-                    <img :src="file.preview" :alt="'Selected image ' + (index + 1)" />
+                    <NuxtImg format="webp" loading="lazy" :src="file.preview" :alt="'Selected image ' + (index + 1)" />
                     <button class="remove-image" @click="removeImage(index)">×</button>
                 </div>
                 <div class="download-card" v-if="selectedFiles.length < totalCount">

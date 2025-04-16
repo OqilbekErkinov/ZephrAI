@@ -4,7 +4,7 @@
         <div class="profile-photo">
             <div class="photo-container">
                 <div class="photo-placeholder">
-                    <img src="/images/profile.png" alt="">
+                    <NuxtImg format="webp" loading="lazy" src="/images/profile.png" alt="" />
                 </div>
             </div>
         </div>
