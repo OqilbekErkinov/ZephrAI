@@ -26,7 +26,6 @@ body {
 body {
   background-color: #131313 !important;
   padding-bottom: 100px;
-  padding-top: 2rem;
 }
 button {
   font-family: 'Gropled', sans-serif !important; 
@@ -36,7 +35,10 @@ button {
 .container {
     max-width: 450px;
     padding: 14px !important;
-  }
+}
+.home-page {
+  margin-top: 2rem;
+}
   h1 {
   font-family: 'Gropled', sans-serif;
   font-size: 40px;
@@ -73,7 +75,6 @@ button {
   }
   .image-card .img {
     width: 100%;
-    aspect-ratio: 3 / 4.4;
     height: auto;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
