@@ -35,10 +35,7 @@ button {
 .container {
     max-width: 450px;
     padding: 14px !important;
-}
-.home-page {
-  margin-top: 2rem;
-}
+  }
   h1 {
   font-family: 'Gropled', sans-serif;
   font-size: 40px;
@@ -73,7 +70,7 @@ button {
   .image-card.large {
     flex: 1;
   }
-  .image-card .img {
+  .image-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
