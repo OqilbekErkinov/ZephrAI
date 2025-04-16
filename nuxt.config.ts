@@ -4,4 +4,12 @@ export default defineNuxtConfig({
   css: [
     "~/assets/css/index.css",
   ],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'ru'
+      }
+    }
+  },
+  modules: ['@nuxt/image'],
 })

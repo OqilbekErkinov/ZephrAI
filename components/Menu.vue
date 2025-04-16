@@ -1,7 +1,7 @@
 <template>
     <div class="menu-back container" style="padding: 0 !important; margin: 0">
         <div class="menu container">
-            <NuxtLink to="/" :class="{ active: $route.path === '/' }">
+            <NuxtLink to="/" :class="{ active: $route.path === '/' }" aria-label="Home">
                 <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M24.7144 10.9785C24.7144 11.752 24.0779 12.3578 23.3564 12.3578H21.9984L22.0281 19.2414C22.0281 19.3574 22.0196 19.4734 22.0069 19.5895V20.2855C22.0069 21.2352 21.2472 22.0043 20.3093 22.0043H19.6303C19.5836 22.0043 19.537 22.0043 19.4903 22C19.4309 22.0043 19.3714 22.0043 19.312 22.0043L17.9328 22H16.9143C15.9764 22 15.2167 21.2309 15.2167 20.2813V19.25V16.5C15.2167 15.7395 14.6099 15.125 13.8587 15.125H11.1427C10.3915 15.125 9.78464 15.7395 9.78464 16.5V19.25V20.2813C9.78464 21.2309 9.025 22 8.08711 22H7.06859H5.71481C5.65116 22 5.5875 21.9957 5.52384 21.9914C5.47292 21.9957 5.42199 22 5.37106 22H4.69205C3.75417 22 2.99452 21.2309 2.99452 20.2813V15.4688C2.99452 15.4301 2.99452 15.3871 2.99876 15.3484V12.3535H1.64074C0.87685 12.3535 0.282715 11.752 0.282715 10.9742C0.282715 10.5875 0.41003 10.2438 0.707098 9.94297L11.584 0.34375C11.8811 0.0429688 12.2206 0 12.5177 0C12.8147 0 13.1542 0.0859375 13.4089 0.300781L24.2476 9.94727C24.5871 10.248 24.7569 10.5918 24.7144 10.9785Z"
@@ -9,7 +9,7 @@
                 </svg>
             </NuxtLink>
 
-            <NuxtLink to="/gallery" :class="{ active: $route.path === '/gallery' }">
+            <NuxtLink to="/gallery" :class="{ active: $route.path === '/gallery' }" aria-label="Gallery">
                 <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_17)">
                         <path
@@ -24,12 +24,12 @@
                 </svg>
             </NuxtLink>
 
-            <NuxtLink to="/styles" :class="{ active: $route.path === '/styles' }">
-                <img style="margin-top: -1.2rem; width: 40px;"
+            <NuxtLink to="/styles" :class="{ active: $route.path === '/styles' }" aria-label="Styles">
+                <NuxtImg format="webp" style="margin-top: -1.2rem; width: 40px;"
                     :src="['/styles', '/premium', '/selection', '/download', '/styles-category', '/styles-type', '/styles-pro'].includes($route.path) ? '/images/logo2.png' : '/images/logo1.png'" alt="Logo" />
             </NuxtLink>
 
-            <NuxtLink to="/creator" :class="{ active: $route.path === '/creator' }">
+            <NuxtLink to="/creator" :class="{ active: $route.path === '/creator' }" aria-label="Creator">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M8.9375 21.1406L8.92891 21.1492L8.70977 21.3125L7.975 21.8625C7.76875 22.0172 7.48945 22.043 7.25313 21.927C7.0168 21.8109 6.875 21.5746 6.875 21.3125V20.3973V20.1223V20.1094V19.9375V17.875H4.8125H2.75C1.2332 17.875 0 16.6418 0 15.125V2.75C0 1.2332 1.2332 0 2.75 0H19.25C20.7668 0 22 1.2332 22 2.75V15.125C22 16.6418 20.7668 17.875 19.25 17.875H13.2902L8.9375 21.1406ZM5 11C6.10457 11 7 10.1046 7 9C7 7.89543 6.10457 7 5 7C3.89543 7 3 7.89543 3 9C3 10.1046 3.89543 11 5 11ZM13 9C13 10.1046 12.1046 11 11 11C9.89543 11 9 10.1046 9 9C9 7.89543 9.89543 7 11 7C12.1046 7 13 7.89543 13 9ZM17 11C18.1046 11 19 10.1046 19 9C19 7.89543 18.1046 7 17 7C15.8954 7 15 7.89543 15 9C15 10.1046 15.8954 11 17 11Z"
@@ -37,7 +37,7 @@
                 </svg>
             </NuxtLink>
 
-            <NuxtLink to="/profile" :class="{ active: $route.path === '/profile' }">
+            <NuxtLink to="/profile" :class="{ active: $route.path === '/profile' }" aria-label="Profile">
                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_1091)">
                         <path

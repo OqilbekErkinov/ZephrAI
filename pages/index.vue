@@ -1,6 +1,7 @@
 <template>
   <div class="home-page container text-center py-4">
     <h1 style="font-size: 48px;">Zephyr<span style="color: #F0A8E1">AI</span> -</h1>
+    <h2 class="visually-hidden">Раздел ассистента</h2>
     <h3>персональный ассистент по нейрофотографиям!</h3>
     <p class="mt-3" style="color: #BCBCBC;">
       ZephyrAI - нейросеть, которая обучается твоей внешности, создавая
@@ -10,15 +11,15 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <img class="large-image2" src="/images/home-large1.png" alt="Image 1" />
+          <NuxtImg format="webp" loading="lazy" class="large-image2" src="/images/home-large1.png" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <img class="large-image" src="/images/home-large2.png" alt="Image 2" />
+          <NuxtImg format="webp" loading="lazy" class="large-image" src="/images/home-large2.png" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">
         <div class="image-card small" v-for="(image, index) in images" :key="index">
-          <img :src="image" :alt="`Image ${index + 3}`" />
+          <NuxtImg format="webp" :src="image" :alt="`Image ${index + 3}`" />
         </div>
       </div>
     </div>
@@ -40,15 +41,15 @@
 
         <div class="image-container">
           <div class="image-card speciall mt-4">
-            <img src="/images/home7.png" alt="Image 3" />
+            <NuxtImg format="webp" src="/images/home7.png" alt="Image 3" />
             <div class="zagruzit">Загрузи...</div>
           </div>
           <div class="image-galleryyy">
             <div class="image-card special me-2">
-              <img src="/images/home5.png" alt="Image 4" />
+              <NuxtImg format="webp" loading="lazy" src="/images/home5.png" alt="Image 4" />
             </div>
             <div class="image-card special">
-              <img src="/images/home6.png" alt="Image 5" />
+              <NuxtImg format="webp" loading="lazy" src="/images/home6.png" alt="Image 5" />
             </div>
           </div>
         </div>
@@ -111,7 +112,7 @@
       </div>
       <div class="image-grid third">
         <div class="image-card special" v-for="(image, index) in thirdGalleryImages" :key="index">
-          <img :src="image" :alt="`Image ${index + 5}`" />
+          <NuxtImg format="webp" :src="image" :alt="`Image ${index + 5}`" />
         </div>
       </div>
     </div>
@@ -136,4 +137,21 @@ const thirdGalleryImages = ref([
   "/images/home16.png",
   "/images/home17.png"
 ]);
+onMounted(() => {
+  document.title = 'Zephyr AI';
+  const meta = document.createElement('meta');
+  meta.name = 'description';
+  meta.content = 'Добро пожаловать на веб-апп Zephyr AI';
+  document.head.appendChild(meta);
+});
 </script>
+<style scoped>
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px; 
+  overflow: hidden; 
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+</style>
