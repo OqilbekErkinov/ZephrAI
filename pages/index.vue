@@ -11,15 +11,15 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <NuxtImg width="400" height="588" format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
+          <NuxtImg width="400" height="588" format="webp" loading="eager" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <NuxtImg format="webp" loading="lazy" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
+          <NuxtImg format="webp" loading="eager" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">
         <div class="image-card small" v-for="(image, index) in images" :key="index">
-          <NuxtImg width="90" height="105" format="webp" :src="image" :alt="`Image ${index + 3}`" />
+          <NuxtImg width="90" height="105" loading="lazy" format="webp" :src="image" :alt="`Image ${index + 3}`" />
         </div>
       </div>
     </div>
