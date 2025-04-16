@@ -21,4 +21,14 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/image'],
+  image: {
+    presets: {
+      desktop: {
+        modifiers: {
+          format: 'webp',
+          quality: 80,
+        },
+      },
+    },
+  },
 })

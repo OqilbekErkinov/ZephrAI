@@ -11,15 +11,15 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <NuxtImg format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
+          <NuxtImage format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <NuxtImg format="webp" loading="lazy" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
+          <NuxtImage format="webp" loading="lazy" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">
         <div class="image-card small" v-for="(image, index) in images" :key="index">
-          <NuxtImg format="webp" :src="image" :alt="`Image ${index + 3}`" />
+          <NuxtImage format="webp" :src="image" :alt="`Image ${index + 3}`" />
         </div>
       </div>
     </div>
@@ -41,15 +41,15 @@
 
         <div class="image-container">
           <div class="image-card speciall">
-            <NuxtImg format="webp" src="/images/home7.webp" alt="Image 3" />
+            <NuxtImage format="webp" src="/images/home7.webp" alt="Image 3" />
             <div class="zagruzit">Загрузи...</div>
           </div>
           <div class="image-galleryyy">
             <div class="image-card special me-2">
-              <NuxtImg format="webp" loading="lazy" src="/images/home5.webp" alt="Image 4" />
+              <NuxtImage format="webp" loading="lazy" src="/images/home5.webp" alt="Image 4" />
             </div>
             <div class="image-card special">
-              <NuxtImg format="webp" loading="lazy" src="/images/home6.webp" alt="Image 5" />
+              <NuxtImage format="webp" loading="lazy" src="/images/home6.webp" alt="Image 5" />
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@
       </div>
       <div class="image-grid third">
         <div class="image-card special" v-for="(image, index) in thirdGalleryImages" :key="index">
-          <NuxtImg format="webp" :src="image" :alt="`Image ${index + 5}`" />
+          <NuxtImage format="webp" :src="image" :alt="`Image ${index + 5}`" />
         </div>
       </div>
     </div>
