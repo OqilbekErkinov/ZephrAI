@@ -11,10 +11,10 @@
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <NuxtImg format="webp" loading="lazy" class="large-image2" src="/images/home-large1.png" alt="Image 1" />
+          <NuxtImg format="webp" loading="lazy" class="large-image2 img" src="/images/home-large1.png" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
-          <NuxtImg format="webp" loading="lazy" class="large-image" src="/images/home-large2.png" alt="Image 2" />
+          <NuxtImg format="webp" loading="lazy" class="large-image img" src="/images/home-large2.png" alt="Image 2" />
         </div>
       </div>
       <div class="image-grid small mt-3">

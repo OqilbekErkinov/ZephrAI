@@ -8,7 +8,16 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'ru'
-      }
+      },
+      link: [
+        {
+          rel: 'preload',
+          href: '/fonts/Gropled-Bold.otf',
+          as: 'font',
+          type: 'font/otf',
+          crossorigin: 'anonymous',
+        },
+      ],
     }
   },
   modules: ['@nuxt/image'],
