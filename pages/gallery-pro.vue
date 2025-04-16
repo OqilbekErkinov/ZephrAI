@@ -142,7 +142,6 @@ const aboutGalleryImages = ref([
     "/images/gallery9.png"
 ]);
 
-// For fullscreen viewer
 const selectedImage = ref(null);
 const currentImageIndex = ref(0);
 const currentSlide = ref(0);

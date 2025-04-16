@@ -17,12 +17,6 @@ useHead({
     },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "anonymous" },
-    {
-      href: "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
-      rel: "stylesheet",
-      media: "print",
-      onload: "this.media='all'"
-    }
   ],
   script: [
     {
