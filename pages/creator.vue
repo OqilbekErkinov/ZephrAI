@@ -52,8 +52,8 @@
   
   .creator img {
     position: fixed;
-    /* right: 0; */
-    /* left: 2.5rem; */
+    right: 0;
+    left: 2.5rem;
     bottom: 14rem;
     z-index: 0;
   }
