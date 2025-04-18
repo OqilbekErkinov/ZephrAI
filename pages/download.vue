@@ -8,8 +8,6 @@
             шагу, кгода будете готовы.
         </p>
         <p class="download-text2">Загрузите ваши фотографи:</p>
-
-        <!-- Preview section with upload button positioned next to last image -->
         <div class="preview-section">
             <div class="image-preview-container">
                 <div class="image-preview" v-for="(file, index) in selectedFiles" :key="index">
@@ -26,7 +24,6 @@
                 </div>
             </div>
         </div>
-
         <NuxtLink to="/downloading">
             <button class="download-button" :disabled="selectedFiles.length < totalCount"
                 :class="{ 'active': selectedFiles.length >= totalCount }">
@@ -35,198 +32,57 @@
         </NuxtLink>
     </div>
 </template>
+<script setup>
+import { ref, computed } from 'vue';
 
-<script>
-export default {
-    data() {
-        return {
-            downloadedCount: 0,
-            totalCount: 10,
-            selectedFiles: []
-        };
-    },
-    computed: {
-        downloadText() {
-            return `Загружено ${this.downloadedCount} из ${this.totalCount}`;
-        },
-        buttonText() {
-            return this.selectedFiles.length >= this.totalCount ? 'Начать' : this.downloadText;
-        }
-    },
-    methods: {
-        openFilePicker() {
-            if (this.selectedFiles.length >= this.totalCount) return;
+const downloadedCount = ref(0);
+const totalCount = 10;
+const selectedFiles = ref([]);
 
-            const fileInput = document.createElement('input');
-            fileInput.type = 'file';
-            fileInput.accept = 'image/*';
-            fileInput.multiple = true;
+const downloadText = computed(() => {
+  return `Загружено ${downloadedCount.value} из ${totalCount}`;
+});
+const buttonText = computed(() => {
+  return selectedFiles.value.length >= totalCount ? 'Начать' : downloadText.value;
+});
+const openFilePicker = () => {
+  if (selectedFiles.value.length >= totalCount) return;
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  const remainingSlots = totalCount - selectedFiles.value.length;
+  if (remainingSlots > 1) {
+    fileInput.multiple = true;
+    fileInput.setAttribute('multiple', 'multiple');
+  } else {
+    fileInput.multiple = false;
+    fileInput.removeAttribute('multiple');
+  }
+  fileInput.click();
 
-            const remainingSlots = this.totalCount - this.selectedFiles.length;
-            if (remainingSlots > 1) {
-                fileInput.multiple = true;
-                fileInput.setAttribute('multiple', 'multiple');
-            } else {
-                fileInput.multiple = false;
-                fileInput.removeAttribute('multiple');
-            }
-
-            fileInput.click();
-
-            fileInput.onchange = (e) => {
-                this.handleFiles(e.target.files);
-            };
-        },
-        handleFiles(files) {
-            const remainingSlots = this.totalCount - this.selectedFiles.length;
-            const filesToAdd = Array.from(files).slice(0, remainingSlots);
-
-            filesToAdd.forEach(file => {
-                if (file.type.match('image.*')) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        this.selectedFiles.push({
-                            file: file,
-                            preview: e.target.result
-                        });
-                        this.downloadedCount = this.selectedFiles.length;
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-        },
-        removeImage(index) {
-            this.selectedFiles.splice(index, 1);
-            this.downloadedCount = this.selectedFiles.length;
-        }
+  fileInput.onchange = (e) => {
+    handleFiles(e.target.files);
+  };
+};
+const handleFiles = (files) => {
+  const remainingSlots = totalCount - selectedFiles.value.length;
+  const filesToAdd = Array.from(files).slice(0, remainingSlots);
+  filesToAdd.forEach(file => {
+    if (file.type.match('image.*')) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        selectedFiles.value.push({
+          file: file,
+          preview: e.target.result
+        });
+        downloadedCount.value = selectedFiles.value.length;
+      };
+      reader.readAsDataURL(file);
     }
+  });
+};
+const removeImage = (index) => {
+  selectedFiles.value.splice(index, 1);
+  downloadedCount.value = selectedFiles.value.length;
 };
 </script>
-
-<style scoped>
-.promo-wrapper {
-    color: white;
-    padding: 2rem 1rem;
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-.preview-section {
-    margin-bottom: 2rem;
-}
-
-.image-preview-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-}
-
-.download-card {
-    background: #191919;
-    padding: 20px;
-    border-radius: 10px;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-.download-card svg {
-    width: 35px;
-    height: 35px;
-}
-
-.download-title {
-    color: #F0A8E1;
-    text-align: left;
-}
-
-.download-text {
-    color: #fff;
-    font-size: 24px;
-    text-align: left;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-weight: regular;
-}
-
-.download-text2 {
-    color: #fff;
-    font-size: 24px;
-    text-align: left;
-    font-weight: regular;
-    margin-bottom: 1.5rem;
-}
-
-.download-button {
-    width: 100%;
-    background: #2D2D2D;
-    color: #777777;
-    padding: 0.75rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    transition: all 0.3s ease;
-    font-family: 'Gropled', sans-serif;
-    font-size: 20px;
-}
-
-.download-button:disabled {
-    cursor: not-allowed;
-}
-
-.download-button.active {
-    background: #F0A8E1;
-    color: #ffff;
-    cursor: pointer;
-}
-
-/* Image preview styles */
-.image-preview-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.image-preview {
-    position: relative;
-    width: 100%;
-    height: 110px;
-    overflow: hidden;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-.image-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.remove-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    color: #2D2D2D;
-    border: none;
-    border-radius: 50%;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    line-height: 1;
-}
-</style>

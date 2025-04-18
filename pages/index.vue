@@ -7,11 +7,11 @@
       ZephyrAI - нейросеть, которая обучается твоей внешности, создавая
       впечатляющие изображения, где ты – в центре внимания!
     </p>
-
     <div class="image-gallery mt-4">
       <div class="image-grid">
         <div class="image-card large">
-          <NuxtImg width="400" height="588" format="webp" loading="eager" class="large-image2 img" src="/images/home-large1.webp" alt="Image 1" />
+          <NuxtImg width="400" height="588" format="webp" loading="eager" class="large-image2 img"
+            src="/images/home-large1.webp" alt="Image 1" />
         </div>
         <div class="image-card large large-1">
           <NuxtImg format="webp" loading="eager" class="large-image img" src="/images/home-large2.webp" alt="Image 2" />
@@ -27,7 +27,6 @@
       <h1 class="mt-3"><span style="color: #F0A8E1">Попробуй,</span> как это работает!</h1>
       <p class="text-light">ZephyrAI покажет тебя в новом облике!</p>
     </div>
-
     <div class="second-gallery">
       <div class="background-image">
         <div class="image-container">
@@ -46,7 +45,6 @@
         </div>
       </div>
     </div>
-
     <div class="third-gallery">
       <div>
         <h1 style="color: #F0A8E1">Кадры просто супер</h1>
@@ -60,7 +58,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 const images = ref([
@@ -87,13 +84,3 @@ onMounted(() => {
   document.head.appendChild(meta);
 });
 </script>
-<style scoped>
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; 
-  width: 1px; 
-  overflow: hidden; 
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-</style>

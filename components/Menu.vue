@@ -8,7 +8,6 @@
                         :fill="$route.path === '/' ? '#F0A8E1' : '#525252'" />
                 </svg>
             </NuxtLink>
-
             <NuxtLink to="/gallery" :class="{ active: $route.path === '/gallery' }" aria-label="Gallery">
                 <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_17)">
@@ -23,12 +22,11 @@
                     </defs>
                 </svg>
             </NuxtLink>
-
             <NuxtLink to="/styles" :class="{ active: $route.path === '/styles' }" aria-label="Styles">
                 <NuxtImg format="webp" style="margin-top: -1.2rem; width: 40px;"
-                    :src="['/styles', '/premium', '/selection', '/download', '/styles-category', '/styles-type', '/styles-pro'].includes($route.path) ? '/images/logo2.webp' : '/images/logo1.webp'" alt="Logo" />
+                    :src="['/styles', '/premium', '/selection', '/download', '/styles-category', '/styles-type', '/styles-pro'].includes($route.path) ? '/images/logo2.webp' : '/images/logo1.webp'"
+                    alt="Logo" />
             </NuxtLink>
-
             <NuxtLink to="/creator" :class="{ active: $route.path === '/creator' }" aria-label="Creator">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -36,7 +34,6 @@
                         :fill="['/creator', '/creator-pro'].includes($route.path) ? '#F0A8E1' : '#525252'" />
                 </svg>
             </NuxtLink>
-
             <NuxtLink to="/profile" :class="{ active: $route.path === '/profile' }" aria-label="Profile">
                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_193_1091)">
@@ -54,7 +51,6 @@
         </div>
     </div>
 </template>
-
 <style scoped>
 .menu {
     position: fixed;
@@ -73,7 +69,6 @@
     color: white;
     z-index: 4100;
 }
-
 .menu-back {
     background: url('/images/buyangisi.png') no-repeat center;
     background-size: cover;
@@ -88,15 +83,12 @@
     align-items: center;
     z-index: 4150;
 }
-
 .menu a svg path {
     transition: fill 0.3s ease;
 }
-
 .menu a:hover svg path {
     fill: #F0A8E1 !important;
 }
-
 .menu a.active svg path {
     fill: #F0A8E1 !important;
 }

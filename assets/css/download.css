@@ -1,0 +1,110 @@
+.promo-wrapper {
+    color: white;
+    padding: 2rem 1rem;
+    max-width: 450px;
+    margin: 0 auto;
+}
+.preview-section {
+    margin-bottom: 2rem;
+}
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+.download-card {
+    background: #191919;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.download-card svg {
+    width: 35px;
+    height: 35px;
+}
+.download-title {
+    color: #F0A8E1;
+    text-align: left;
+}
+.download-text {
+    color: #fff;
+    font-size: 24px;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: regular;
+}
+.download-text2 {
+    color: #fff;
+    font-size: 24px;
+    text-align: left;
+    font-weight: regular;
+    margin-bottom: 1.5rem;
+}
+.download-button {
+    width: 100%;
+    background: #2D2D2D;
+    color: #777777;
+    padding: 0.75rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Gropled', sans-serif;
+    font-size: 20px;
+}
+.download-button:disabled {
+    cursor: not-allowed;
+}
+.download-button.active {
+    background: #F0A8E1;
+    color: #ffff;
+    cursor: pointer;
+}
+.image-preview-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.image-preview {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.remove-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    color: #2D2D2D;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}

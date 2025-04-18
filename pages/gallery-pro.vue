@@ -1,14 +1,12 @@
 <template>
     <div class="container">
         <h1 style="color: #F0A8E1; margin-top: 1rem">Галерея</h1>
-
         <div class="about-gallery">
             <div class="image-cardd specialll" v-for="(image, index) in aboutGalleryImages" :key="index">
-                <NuxtImg format="webp" loading="lazy" :src="image" :alt="`Image ${index + 5}`" @click="openImage(image, index)" />
+                <NuxtImg format="webp" loading="lazy" :src="image" :alt="`Image ${index + 5}`"
+                    @click="openImage(image, index)" />
             </div>
         </div>
-
-        <!-- Fullscreen image viewer -->
         <div class="image-viewer fullscreen-viewer" v-if="selectedImage" @click="closeImage">
             <div class="viewer-header">
                 <div class="back-button" @click.stop="closeImage">
@@ -54,8 +52,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Selection modal -->
         <div class="modal-overlay" v-if="showSelectionViewer" @click="closeSelectionViewer">
             <div class="selection-modal" @click.stop>
                 <div class="selection-header">
@@ -69,8 +65,6 @@
                         </svg>
                     </button>
                 </div>
-
-                <!-- Vue3 Carousel -->
                 <Carousel ref="carouselRef" v-model="currentSlide" :items-to-show="1.25" :wrap-around="true"
                     :snap-align="'center'" class="vue3-carousel">
                     <Slide v-for="(image, index) in aboutGalleryImages" :key="index">
@@ -86,8 +80,6 @@
                             </div>
                         </div>
                     </Slide>
-
-                    <!-- Custom Navigation Buttons -->
                     <template #addons>
                         <div class="custom-navigation">
                             <button class="nav-button prev-button prevv" @click="goPrev">
@@ -109,7 +101,6 @@
                         </div>
                     </template>
                 </Carousel>
-                <!-- Social media buttons -->
                 <div class="social-buttons">
                     <button class="social-btn instagram" @click="shareToSocial('instagram')">
                         <img src="/images/icon-instagram.png" class="icon" />
@@ -146,63 +137,50 @@ const selectedImage = ref(null);
 const currentImageIndex = ref(0);
 const currentSlide = ref(0);
 const carousel = ref(null);
-
 const carouselRef = ref(null);
 const goPrev = () => {
     if (carouselRef.value) {
         carouselRef.value.prev();
     }
 };
-
 const goNext = () => {
     if (carouselRef.value) {
         carouselRef.value.next();
     }
 };
-
 function openImage(image, index) {
     selectedImage.value = image;
     currentImageIndex.value = index;
     document.body.classList.add('no-scroll');
 }
-
 function closeImage() {
     selectedImage.value = null;
     document.body.classList.remove('no-scroll');
 }
-
 function showNextImage() {
     if (currentImageIndex.value < aboutGalleryImages.value.length - 1) {
         currentImageIndex.value++;
         selectedImage.value = aboutGalleryImages.value[currentImageIndex.value];
     }
 }
-
 function showPreviousImage() {
     if (currentImageIndex.value > 0) {
         currentImageIndex.value--;
         selectedImage.value = aboutGalleryImages.value[currentImageIndex.value];
     }
 }
-
-// For selection functionality
 const selectedImages = ref([]);
 const showSelectionViewer = ref(false);
-
 function openSelectionViewer() {
-    // Start with current image selected
     if (selectedImage.value && !selectedImages.value.includes(selectedImage.value)) {
         selectedImages.value = [selectedImage.value];
     }
     showSelectionViewer.value = true;
     document.body.classList.add('no-scroll');
-
-    // Set initial slide to current image
     nextTick(() => {
         currentSlide.value = currentImageIndex.value;
     });
 }
-
 function toggleImageSelection(image) {
     const imageIndex = selectedImages.value.indexOf(image);
     if (imageIndex === -1) {
@@ -211,23 +189,19 @@ function toggleImageSelection(image) {
         selectedImages.value.splice(imageIndex, 1);
     }
 }
-
 function isImageSelected(image) {
     return selectedImages.value.includes(image);
 }
-
 function closeSelectionViewer() {
     showSelectionViewer.value = false;
     document.body.classList.remove('no-scroll');
 }
-
 function shareToSocial(platform) {
     if (selectedImages.value.length === 0) return;
 
     const imageUrls = selectedImages.value.map(img =>
         new URL(img, window.location.origin).href
     ).join('\n');
-
     switch (platform) {
         case 'instagram':
             alert('Sharing these images to Instagram:\n' + imageUrls);
@@ -241,332 +215,3 @@ function shareToSocial(platform) {
     }
 }
 </script>
-
-<style scoped>
-.container {
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.about-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 7px;
-    justify-content: center;
-    /* padding: 8px; */
-    margin-bottom: 5rem;
-}
-
-.image-cardd.specialll {
-    width: 100%;
-    height: 160px;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-}
-
-.about-gallery .image-cardd img {
-    height: 160px;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-/* Fullscreen image viewer */
-.image-viewer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-}
-
-.fullscreen-viewer .viewer-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.fullscreen-viewer .viewer-content {
-    flex: 0.9;
-    /* height: 350px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.image-container {
-    width: 95%;
-    min-height: 550px;
-    border-radius: 15px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.viewer-content img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.viewer-footer {
-    display: flex;
-    justify-content: flex-end;
-    padding: 16px auto;
-    background-color: rgba(0, 0, 0, 0.8);
-
-}
-
-.back-button {
-    display: flex;
-    align-items: center;
-    color: white;
-    cursor: p
-}
-
-.back-button span {
-    margin-left: 8px;
-}
-
-.prev-button {
-    left: 30px;
-}
-
-.next-button {
-    right: 30px;
-}
-.prevv {
-    left: 34px;
-}
-.nextt {
-    right: 34px;
-}
-.nav-button {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(2px);
-    color: #969696;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.nav-button:hover {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-.share-button {
-    cursor: pointer;
-    padding: 8px;
-    margin: auto;
-    margin-top: -7rem;
-}
-
-.share {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    right: 25px;
-}
-
-.line5 {
-    margin-top: 2rem;
-    width: 100%;
-}
-
-/* Modal styles */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    z-index: 1050;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.selection-modal {
-    background-color: rgba(0, 0, 0, 0.95);
-    width: 100%;
-    max-width: 500px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
-    padding-bottom: 8rem;
-    margin-bottom: -7rem;
-}
-
-.selection-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.selection-title {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.close-button {
-    background: none;
-    border: 1px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Vue3 Carousel styles */
-.vue3-carousel {
-    position: relative;
-    width: 100%;
-    height: 67vh;
-    padding-top: 20px;
-    --carousel-slide-width: 80%;
-}
-
-.carousel__viewport {
-    height: 100%;
-    overflow: visible !important;
-}
-
-.carousel__track {
-    height: 100%;
-}
-
-.carousel__slide {
-    flex: 0 0 var(--carousel-slide-width);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-    padding: 0 14px;
-}
-
-.slide-content {
-    position: relative;
-    width: 100%;
-    min-height: 350px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.slide-content img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Checkmark */
-.image-checkmark {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: 1px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-}
-
-.image-checkmark.checked {
-    background-color: #0099FF;
-    border-color: #0099FF;
-}
-
-/* Navigation buttons */
-::v-deep(.carousel__prev),
-::v-deep(.carousel__next) {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: #969696;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-::v-deep(.carousel__prev:hover),
-::v-deep(.carousel__next:hover) {
-    background: rgba(255, 255, 255, 0.4);
-}
-
-::v-deep(.carousel__prev) {
-    left: 30px;
-}
-
-::v-deep(.carousel__next) {
-    right: 30px;
-}
-
-/* Social buttons */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    padding-top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    /* padding-bottom: 7rem; */
-}
-
-.social-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    background: transparent;
-}
-</style>

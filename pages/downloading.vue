@@ -8,11 +8,8 @@
       мы создаём ваш цифровой
       аватар.
     </p>
-
     <div class="image-wrapper" ref="imageWrapper">
       <NuxtImg format="webp" loading="lazy" class="downloading-img" src="/images/downloading.png" alt="" />
-      
-
       <transition name="fade">
         <svg v-if="showIcon" class="floating-icon"
           :style="{ top: iconPosition.top + 'px', left: iconPosition.left + 'px' }" width="90" height="80"
@@ -66,7 +63,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 import { onMounted, ref, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
@@ -75,89 +71,31 @@ const router = useRouter();
 const showIcon = ref(false);
 const iconPosition = ref({ top: 0, left: 0 });
 const imageWrapper = ref(null);
-
 let intervalId = null;
-
 const updateIcon = () => {
   if (!imageWrapper.value) return;
-
   const imageRect = imageWrapper.value.getBoundingClientRect();
-
   const angle = Math.random() * 2 * Math.PI;
   const radius = 120;
   const offsetX = radius * Math.cos(angle);
   const offsetY = radius * Math.sin(angle);
-
   iconPosition.value = {
     top: imageRect.height / 2 + offsetY - 20,
     left: imageRect.width / 2 + offsetX - 40,
   };
-
   showIcon.value = true;
-
   setTimeout(() => {
     showIcon.value = false;
   }, 1000);
 };
-
 onMounted(() => {
   intervalId = setInterval(updateIcon, 2000);
   updateIcon();
-
   setTimeout(() => {
     router.push('/success');
   }, 6000);
 });
-
 onBeforeUnmount(() => {
   if (intervalId) clearInterval(intervalId);
 });
 </script>
-
-<style scoped>
-.downloading-wrapper {
-  color: white;
-  max-width: 450px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.downloading-title {
-  color: #f0a8e1;
-  text-align: left;
-}
-
-.downloading-text {
-  color: #fff;
-  font-size: 24px;
-  text-align: left;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.image-wrapper {
-  position: relative;
-  width: fit-content;
-  margin: 5rem auto 6%;
-}
-
-.downloading-img {
-  width: 75%;
-}
-
-.floating-icon {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.4s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>

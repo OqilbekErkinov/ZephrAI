@@ -8,29 +8,26 @@
       </div>
       <div class="type-grid">
         <NuxtLink class="type-card" v-for="(type, i) in types" :key="i" :style="{ backgroundImage: `url(${type.img})` }"
-        :to="{ path: '/styles-pro', query: { type: type.title } }" style="text-decoration: none;">
-        <div >
-          <p class="type-title">{{ type.title }}</p>
-        </div>
-      </NuxtLink>
+          :to="{ path: '/styles-pro', query: { type: type.title } }" style="text-decoration: none;">
+          <div>
+            <p class="type-title">{{ type.title }}</p>
+          </div>
+        </NuxtLink>
+      </div>
+    </div>
+    <div class="gradient-overlay top">
+      <NuxtImg format="webp" loading="lazy" src="/images/shadow2.png" alt="" />
     </div>
   </div>
-  <div class="gradient-overlay top">
-    <NuxtImg format="webp" loading="lazy" src="/images/shadow2.png" alt="" />
-  </div>
-  </div>
 </template>
-
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
 const router = useRouter()
-
 const goBack = () => {
   router.push('/styles-category')
 }
-
 const types = [
   { title: 'Туман', img: '/images/type1.png' },
   { title: 'Очки будущего', img: '/images/type2.png' },
@@ -41,94 +38,3 @@ const types = [
   { title: 'Летнее сияние', img: '/images/type7.png' }
 ]
 </script>
-
-<style scoped>
-.type-wrapper {
-  background: #131313;
-  max-width: 450px;
-  margin: 0 auto;
-}
-
-.type-heading {
-  font-weight: bold;
-  color: #fff;
-  line-height: 1.2;
-  letter-spacing: 1.2px;
-  margin: 14px;
-}
-
-.highlight {
-  color: #F0A8E1;
-}
-
-.type-back {
-  background: url('/images/typeback.png') no-repeat center;
-  background-size: cover;
-  width: 100%;
-  height: 150%;
-  border-radius: 10px;
-  padding: 14px;
-  /* margin-bottom: 10rem; */
-}
-
-.type-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.type-card {
-  /* background: rgba(25, 25, 25, 0.8); */
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  height: 180px;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-}
-
-
-.type-title {
-  color: white;
-  font-size: 14px;
-  padding: 5px 0.2rem;
-  background: rgba(25, 25, 25, 0.65);
-  backdrop-filter: blur(10px);
-  width: 100%;
-  margin-top: auto;
-  text-align: center;
-  border-radius: none;
-  overflow: hidden;
-  margin: 0;
-}
-
-.type-back h4 {
-  font-size: 20px;
-  color: white;
-}
-
-.cancel {
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-}
-
-.gradient-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 60px;
-  z-index: 4050;
-  pointer-events: none;
-  width: 100%;
-  color: #070707 !important;
-  background-color: #070707 !important;
-}
-
-.gradient-overlay.top {
-  background: linear-gradient(to bottom, rgba(7, 7, 7, 1), transparent);
-}
-</style>

@@ -1,0 +1,27 @@
+.success-wrapper {
+    color: white;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+.success-title {
+    color: #F0A8E1;
+    text-align: center;
+}
+.success-text {
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: regular;
+}
+.success-img {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 75%;
+    margin-top: 4rem;
+    margin-bottom: 6rem;
+    margin-right: 7.5rem;
+}

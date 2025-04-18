@@ -1,0 +1,38 @@
+.downloading-wrapper {
+  color: white;
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+}
+.downloading-title {
+  color: #f0a8e1;
+  text-align: left;
+}
+.downloading-text {
+  color: #fff;
+  font-size: 24px;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.image-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 5rem auto 6%;
+}
+.downloading-img {
+  width: 75%;
+}
+.floating-icon {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
